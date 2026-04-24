@@ -1,587 +1,1428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acero Trail Running 2026 — Cronómetro Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root {
+  --red: #CC0000;
+  --red-bright: #FF1111;
+  --red-dark: #8B0000;
+  --red-deep: #2A0000;
+  --green: #2ecc71;
+  --green-dark: #0a2a0a;
+  --bg: #080808;
+  --bg2: #0F0F0F;
+  --bg3: #141414;
+  --bg4: #1A1A1A;
+  --bg5: #222222;
+  --border: #1E1E1E;
+  --border2: #2A2A2A;
+  --text: #FFFFFF;
+  --text2: #AAAAAA;
+  --text3: #666666;
+  --text4: #333333;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-.app { background: #0A0A0A; min-height: 100vh; font-family: 'Barlow Condensed', 'Barlow', sans-serif; }
-.app-inner { padding: 0 16px 32px; }
+html { font-size: 16px; }
 
-.hero-header {
-  background: #0A0A0A;
-  border-bottom: 2px solid #CC0000;
-  padding: 20px 16px 16px;
-  margin-bottom: 14px;
+body {
+  background: var(--bg);
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════
+   HERO HEADER
+═══════════════════════════════════════ */
+.hero {
+  background: var(--bg);
+  border-bottom: 3px solid var(--red);
+  padding: 28px 32px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0.5;
+}
+.hero-brand {
   display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1;
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+.hero-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+.hero-t1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  color: var(--text);
+  letter-spacing: 4px;
+  line-height: 0.9;
+}
+.hero-t2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  color: var(--red);
+  letter-spacing: 4px;
+  line-height: 0.9;
+  margin-left: 16px;
+}
+.hero-t3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  color: var(--bg4);
+  letter-spacing: 4px;
+  line-height: 0.9;
+  margin-left: 16px;
+}
+.hero-sub {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+.hero-sub-line {
+  width: 40px;
+  height: 2px;
+  background: var(--red);
+  opacity: 0.5;
+}
+.hero-sub-text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.hero-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
 }
-.hero-brand { display: flex; flex-direction: column; gap: 0; }
-.hero-line1 { font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; letter-spacing: 6px; color: #fff; line-height: 1; }
-.hero-line2 { font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; letter-spacing: 6px; color: #CC0000; line-height: 1; }
-.hero-line3 { font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 8px; color: #2A2A2A; line-height: 1; }
-.hero-sub { font-size: 9px; color: #444; letter-spacing: 4px; text-transform: uppercase; margin-top: 6px; }
-.hero-meta { text-align: right; }
-.hero-date { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #CC0000; letter-spacing: 3px; }
-.hero-place { font-size: 10px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.hero-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--red);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+.hero-place {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero-live {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  align-items: flex-end;
+}
+.hero-live-item {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 
-.master-clock {
-  background: #111; border: 1px solid #CC0000; border-radius: 10px;
-  padding: 18px 22px; margin-bottom: 12px;
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-}
-.master-label { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 4px; }
-.master-time { font-size: 60px; font-weight: 700; letter-spacing: 5px; color: #fff; font-variant-numeric: tabular-nums; transition: color 0.3s; line-height: 1; }
-.master-time.running { color: #CC0000; }
-.master-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+/* ═══════════════════════════════════════
+   APP WRAPPER
+═══════════════════════════════════════ */
+.app-body { padding: 0 24px 48px; }
 
-button {
-  border: 1px solid #2A2A2A; background: #161616; color: #888;
-  border-radius: 5px; padding: 8px 16px; font-size: 11px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.15s; white-space: nowrap;
-}
-button:hover { background: #1E1E1E; color: #fff; border-color: #444; }
-button:active { transform: scale(0.97); }
-button.btn-go { background: #CC0000; color: #fff; border-color: #CC0000; }
-button.btn-go:hover { background: #FF0000; }
-button.btn-stop { background: #2A0000; color: #CC0000; border-color: #8B0000; }
-button.btn-stop:hover { background: #3A0000; color: #FF0000; }
-button.btn-ghost { padding: 7px 12px; font-size: 10px; }
-button:disabled { opacity: 0.25; cursor: default; transform: none; }
-
-.tab-bar {
-  display: flex; gap: 4px; margin-bottom: 14px;
-  border-bottom: 1px solid #1A1A1A; padding-bottom: 0;
-}
-.tab-btn {
-  background: none; border: none; border-bottom: 2px solid transparent;
-  color: #444; padding: 10px 18px; font-size: 11px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
-  border-radius: 0; transition: all 0.15s; margin-bottom: -1px;
-}
-.tab-btn:hover { color: #888; background: none; }
-.tab-btn.active { color: #fff; border-bottom-color: #CC0000; background: none; }
-
+/* ═══════════════════════════════════════
+   LOAD SECTION
+═══════════════════════════════════════ */
 .load-section {
-  background: #111; border: 1px solid #1E1E1E; border-radius: 8px;
-  padding: 12px 16px; margin-bottom: 12px;
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 16px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .load-section input[type=text] {
-  flex: 1; min-width: 180px; padding: 7px 10px;
-  border: 1px solid #222; border-radius: 5px;
-  background: #0A0A0A; color: #fff; font-size: 11px; outline: none;
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 14px;
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-family: 'Barlow Condensed', sans-serif;
+  outline: none;
+  letter-spacing: 0.5px;
 }
-.load-section input:focus { border-color: #CC0000; }
-.load-status { font-size: 10px; color: #444; }
-.load-status.ok { color: #2ecc71; }
-.load-status.err { color: #CC0000; }
+.load-section input:focus { border-color: var(--red); }
+.load-status { font-size: 12px; color: var(--text3); flex: 1; min-width: 200px; }
+.load-status.ok { color: var(--green); }
+.load-status.err { color: var(--red); }
 
-.stats-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px,1fr)); gap: 7px; margin-bottom: 12px; }
-.stat-card { background: #111; border: 1px solid #1A1A1A; border-radius: 7px; padding: 9px 11px; }
-.stat-label { font-size: 8px; color: #444; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 3px; }
-.stat-val { font-size: 24px; font-weight: 700; color: #fff; line-height: 1; }
+/* ═══════════════════════════════════════
+   MASTER CLOCK
+═══════════════════════════════════════ */
+.master-clock {
+  background: var(--bg2);
+  border: 1px solid var(--red-dark);
+  border-radius: 12px;
+  padding: 22px 28px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.master-label {
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.master-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  letter-spacing: 6px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  transition: color 0.3s;
+}
+.master-time.running { color: var(--red); }
+.master-btns { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; flex: 1; justify-content: flex-end; }
 
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+button {
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text3);
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+button:hover { background: var(--bg4); color: var(--text); border-color: var(--bg5); }
+button:active { transform: scale(0.97); }
+button.btn-go { background: var(--red); color: #fff; border-color: var(--red); }
+button.btn-go:hover { background: var(--red-bright); border-color: var(--red-bright); }
+button.btn-stop { background: var(--red-deep); color: var(--red); border-color: var(--red-dark); }
+button.btn-stop:hover { background: #3A0000; color: #FF4444; }
+button.btn-ghost { padding: 9px 14px; font-size: 11px; }
+button:disabled { opacity: 0.2; cursor: default; transform: none; }
+
+/* ═══════════════════════════════════════
+   STATS ROW
+═══════════════════════════════════════ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.stat-label {
+  font-size: 9px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.stat-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--text);
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════
+   TABS
+═══════════════════════════════════════ */
+.tab-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text4);
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.2s;
+  margin-bottom: -2px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.tab-btn:hover { color: var(--text2); background: none; }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--red); background: none; }
+
+/* ═══════════════════════════════════════
+   SECTION TITLE
+═══════════════════════════════════════ */
 .section-title {
-  font-size: 8px; color: #444; text-transform: uppercase; letter-spacing: 3px;
-  margin-bottom: 7px; margin-top: 12px;
-  border-left: 2px solid #CC0000; padding-left: 8px;
+  font-size: 9px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  border-left: 3px solid var(--red);
+  padding-left: 10px;
+  font-weight: 700;
 }
 
-.filters { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
+/* ═══════════════════════════════════════
+   FILTER BUTTONS
+═══════════════════════════════════════ */
+.filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .filter-btn {
-  border-radius: 20px; padding: 4px 12px; font-size: 10px; font-weight: 700;
-  letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.15s;
-  white-space: nowrap; border: 1px solid #252525; background: #111; color: #444;
+  border-radius: 24px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  border: 1.5px solid var(--border2);
+  background: var(--bg2);
+  color: var(--text3);
+  font-family: 'Barlow Condensed', sans-serif;
 }
-.filter-btn:hover { color: #ccc; border-color: #444; background: #111; }
+.filter-btn:hover { color: var(--text2); border-color: var(--bg5); background: var(--bg3); }
+.filter-btn.active {
+  box-shadow: 0 0 0 1px currentColor;
+}
 
-.search-wrap { margin-top: 10px; margin-bottom: 14px; }
+/* ═══════════════════════════════════════
+   SEARCH
+═══════════════════════════════════════ */
+.search-wrap { margin: 12px 0; }
 .search-box {
-  width: 100%; padding: 9px 14px; border: 1px solid #222; border-radius: 6px;
-  background: #111; color: #fff; font-size: 13px; outline: none; letter-spacing: 0.5px;
+  width: 100%;
+  padding: 12px 18px;
+  border: 1.5px solid var(--border2);
+  border-radius: 8px;
+  background: var(--bg2);
+  color: var(--text);
+  font-size: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  outline: none;
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s;
 }
-.search-box:focus { border-color: #CC0000; }
-.search-box::placeholder { color: #2A2A2A; }
+.search-box:focus { border-color: var(--red); }
+.search-box::placeholder { color: var(--text4); }
+.search-hint {
+  font-size: 11px;
+  color: var(--text4);
+  margin-top: 5px;
+  letter-spacing: 1px;
+  padding-left: 4px;
+}
+.search-hint.ready { color: var(--green); }
 
-.runners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px,1fr)); gap: 10px; }
+/* ═══════════════════════════════════════
+   RUNNER CARDS GRID
+═══════════════════════════════════════ */
+.runners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
 
 .runner-card {
-  border-radius: 10px; border: 1px solid; overflow: hidden; transition: border-color 0.2s;
+  border-radius: 12px;
+  border: 1.5px solid;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.15s;
 }
-.card-header { padding: 12px 16px 10px; }
-.card-body { background: #0D0D0D; padding: 14px 16px; }
+.runner-card:hover { transform: translateY(-1px); }
 
-.runner-id { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 5px; }
-.runner-name { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 0.5px; line-height: 1.1; margin-bottom: 3px; }
-.runner-cat { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
-.runner-meta { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; }
+.card-header { padding: 16px 20px 14px; }
+.card-body { background: #0A0A0A; padding: 16px 20px; }
+
+.runner-id {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.runner-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.runner-name-partner {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.runner-name-partner::before {
+  content: '+';
+  font-size: 14px;
+  opacity: 0.5;
+}
+.runner-cat {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.runner-meta {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .runner-time {
-  font-size: 46px; font-weight: 700; letter-spacing: 3px;
-  font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 10px; color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 58px;
+  letter-spacing: 4px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-bottom: 12px;
+  color: var(--text);
 }
-.runner-time.finished { color: #2ecc71; }
-.runner-time.pending { color: #252525; }
+.runner-time.finished { color: var(--green); }
+.runner-time.pending { color: var(--text4); }
 
-.finish-mark { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #2ecc71; margin-bottom: 10px; }
+.finish-mark {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
 
-.runner-actions { display: flex; gap: 6px; }
-.runner-actions button { flex: 1; font-size: 10px; padding: 7px 8px; }
+.runner-actions { display: flex; gap: 8px; }
+.runner-actions button { flex: 1; font-size: 11px; padding: 9px 10px; }
 
 .dist-badge {
-  font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px;
-  text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid; white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1.5px solid;
+  white-space: nowrap;
 }
 
 .running-dot {
-  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
-  background: #CC0000; margin-right: 5px; vertical-align: middle;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-right: 6px;
+  vertical-align: middle;
   animation: blink 0.9s ease-in-out infinite;
 }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
 
-.dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; vertical-align: middle; margin-right: 5px; }
-.empty-msg { grid-column:1/-1; text-align:center; padding:60px; color:#252525; font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.empty-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px;
+  color: var(--text4);
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-.podium-section { margin-top: 4px; }
-.podium-group { margin-bottom: 24px; }
+/* ═══════════════════════════════════════
+   CLASIFICACION / PODIUM
+═══════════════════════════════════════ */
+.podium-filters { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+
+.ranking-section { margin-top: 6px; }
+
+/* Ranking General */
+.ranking-general {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.ranking-general-header {
+  background: linear-gradient(90deg, var(--red-dark), #1a0000);
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ranking-general-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--text);
+}
+.ranking-general-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Category group */
+.podium-group { margin-bottom: 28px; }
+.podium-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  background: var(--bg2);
+  border-radius: 8px;
+  border-left: 3px solid var(--red);
+}
 .podium-group-title {
-  font-size: 9px; color: #444; text-transform: uppercase; letter-spacing: 3px;
-  border-left: 2px solid #CC0000; padding-left: 8px; margin-bottom: 10px;
+  font-size: 11px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
 }
-.podium-table { width: 100%; border-collapse: collapse; }
-.podium-table th {
-  font-size: 8px; color: #333; text-transform: uppercase; letter-spacing: 2px;
-  padding: 6px 10px; text-align: left; border-bottom: 1px solid #1A1A1A; font-weight: 700;
+.podium-group-count {
+  font-size: 10px;
+  color: var(--text4);
+  letter-spacing: 1px;
+  margin-left: auto;
 }
-.podium-table td { padding: 9px 10px; border-bottom: 1px solid #141414; vertical-align: middle; }
+
+/* Ranking table */
+.ranking-table { width: 100%; border-collapse: collapse; }
+.ranking-table th {
+  font-size: 9px;
+  color: var(--text4);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding: 8px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  background: var(--bg);
+}
+.ranking-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #111;
+  vertical-align: middle;
+}
+.ranking-table tr:last-child td { border-bottom: none; }
+.ranking-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.pos-cell { width: 50px; text-align: center; }
 .pos-num {
-  font-size: 18px; font-weight: 700; width: 36px; text-align: center;
-  font-variant-numeric: tabular-nums;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  line-height: 1;
 }
 .pos-1 { color: #FFD700; }
 .pos-2 { color: #C0C0C0; }
 .pos-3 { color: #CD7F32; }
-.pos-rest { color: #333; font-size: 14px; }
-.pod-name { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
-.pod-cat { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-.pod-time { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; color: #fff; letter-spacing: 1px; }
-.pod-time.best { color: #2ecc71; }
-.pod-id { font-size: 9px; color: #333; letter-spacing: 1px; }
-.podium-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
-.podium-empty { text-align: center; padding: 40px; color: #252525; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
-.pod-row-top { background: rgba(255,255,255,0.015); }
-.cat-stripe { display: inline-block; width: 3px; height: 16px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+.pos-rest { color: var(--text4); font-size: 20px; }
+
+.pod-name { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
+.pod-name-partner { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+.pod-id { font-size: 10px; color: var(--text4); letter-spacing: 1.5px; margin-top: 2px; font-family: 'Bebas Neue', sans-serif; }
+.pod-cat-cell { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.pod-dist-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; border: 1px solid; margin-top: 4px; }
+.pod-time { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--text); }
+.pod-time.best { color: var(--green); }
+.pod-time.top3 { color: #FFD700; }
+
+.podium-empty { text-align: center; padding: 60px; color: var(--text4); font-size: 13px; text-transform: uppercase; letter-spacing: 3px; }
+
+/* Medal icons */
+.medal { font-size: 18px; display: block; margin-top: 2px; }
+
+/* ═══════════════════════════════════════
+   DIST SECTION DIVIDER
+═══════════════════════════════════════ */
+.dist-divider {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.dist-divider-line { flex: 1; height: 1px; background: var(--border); }
+.dist-divider-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  padding: 0 4px;
+}
 </style>
+</head>
+<body>
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-
-<div class="app">
-
-  <div class="hero-header">
-    <div class="hero-brand">
-      <div class="hero-line1">ACERO</div>
-      <div class="hero-line2">TRAIL</div>
-      <div class="hero-line3">RUNNING</div>
-      <div class="hero-sub">San Mateo · Manabi · Ecuador</div>
+<!-- HERO HEADER -->
+<header class="hero">
+  <div class="hero-brand">
+    <div class="hero-eyebrow">Cronómetro Oficial · Competencia</div>
+    <div class="hero-title">
+      <span class="hero-t1">ACERO</span>
+      <span class="hero-t2">TRAIL</span>
+      <span class="hero-t3">RUNNING</span>
     </div>
-    <div class="hero-meta">
-      <div class="hero-date">25 · ABR · 2026</div>
-      <div class="hero-place">Cronometro Oficial</div>
-      <div style="margin-top:10px;text-align:right">
-        <div id="s-running" style="font-size:11px;color:#555;letter-spacing:1px">— en carrera</div>
-        <div id="s-finished" style="font-size:11px;color:#2ecc71;letter-spacing:1px">— finalizados</div>
-      </div>
+    <div class="hero-sub">
+      <div class="hero-sub-line"></div>
+      <span class="hero-sub-text">San Mateo · Manabí · Ecuador</span>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-date">25 · ABR · 2026</div>
+    <div class="hero-place">Cronómetro Oficial</div>
+    <div class="hero-live">
+      <div class="hero-live-item" id="s-running" style="color:#CC0000">— en carrera</div>
+      <div class="hero-live-item" id="s-finished" style="color:#2ecc71">— finalizados</div>
+    </div>
+  </div>
+</header>
+
+<div class="app-body">
+
+  <!-- LOAD SECTION -->
+  <div class="load-section">
+    <div class="load-status" id="load-status">Demo activo — pega tu URL de Apps Script para cargar corredores reales</div>
+    <input type="text" id="script-url" placeholder="https://script.google.com/macros/s/.../exec">
+    <button onclick="loadFromSheet()" class="btn-ghost" style="color:#CC0000;border-color:#8B0000">Cargar corredores</button>
+  </div>
+
+  <!-- MASTER CLOCK -->
+  <div class="master-clock">
+    <div style="flex:1;min-width:220px">
+      <div class="master-label">Cronómetro General</div>
+      <div class="master-time" id="master-display">00:00:00</div>
+    </div>
+    <div class="master-btns">
+      <button class="btn-go" id="btn-start" onclick="masterStart()">Iniciar Largada</button>
+      <button id="btn-pause" onclick="masterPause()" style="display:none">Pausar</button>
+      <button class="btn-stop" id="btn-reset" onclick="masterReset()">Reiniciar</button>
+      <button class="btn-ghost" onclick="finishAll()">Finalizar Todos</button>
     </div>
   </div>
 
-  <div class="app-inner">
+  <!-- STATS -->
+  <div class="stats-row" id="stats-row"></div>
 
-    <div class="load-section">
-      <div style="flex:1;min-width:160px">
-        <div class="load-status" id="load-status">Demo activo — pega tu URL de Apps Script para cargar corredores reales</div>
-      </div>
-      <input type="text" id="script-url" placeholder="https://script.google.com/macros/s/.../exec">
-      <button onclick="loadFromSheet()" class="btn-ghost" style="color:#CC0000;border-color:#8B0000">Cargar corredores</button>
-    </div>
-
-    <div class="master-clock">
-      <div style="flex:1;min-width:200px">
-        <div class="master-label">Cronometro general</div>
-        <div class="master-time" id="master-display">00:00:00</div>
-      </div>
-      <div class="master-btns">
-        <button class="btn-go" id="btn-start" onclick="masterStart()">Iniciar largada</button>
-        <button id="btn-pause" onclick="masterPause()" style="display:none">Pausar</button>
-        <button class="btn-stop" id="btn-reset" onclick="masterReset()">Reiniciar</button>
-        <button class="btn-ghost" onclick="finishAll()">Finalizar todos</button>
-      </div>
-    </div>
-
-    <div class="stats-row" id="stats-row"></div>
-
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="setTab('cronometro',this)">Cronometro</button>
-      <button class="tab-btn" onclick="setTab('clasificacion',this)">Clasificacion</button>
-    </div>
-
-    <div id="tab-cronometro">
-      <div class="section-title">Categoria</div>
-      <div class="filters" id="cat-filters"></div>
-
-      <div class="section-title">Distancia</div>
-      <div class="filters" id="dist-filters"></div>
-
-      <div class="search-wrap">
-        <input class="search-box" id="search" placeholder="Buscar por nombre o ID..." oninput="renderCards()">
-      </div>
-
-      <div class="runners-grid" id="runners-grid"></div>
-    </div>
-
-    <div id="tab-clasificacion" style="display:none">
-      <div class="section-title">Filtrar clasificacion</div>
-      <div class="podium-filters">
-        <button class="filter-btn" style="background:#1A1A1A;color:#fff;border-color:#444" onclick="setPodFilter('dist','all',this)">Todas las distancias</button>
-        <button class="filter-btn" id="pf-2k" onclick="setPodFilter('dist','2K',this)" style="border-color:#1D9E75;color:#9FE1CB">2K</button>
-        <button class="filter-btn" id="pf-6k" onclick="setPodFilter('dist','6K',this)" style="border-color:#1565C0;color:#90CAF9">6K</button>
-        <button class="filter-btn" id="pf-11k" onclick="setPodFilter('dist','11K',this)" style="border-color:#CC0000;color:#F7C1C1">11K</button>
-      </div>
-      <div class="podium-filters" id="pod-cat-filters"></div>
-      <div class="podium-section" id="podium-section"></div>
-    </div>
-
+  <!-- TABS -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="setTab('cronometro',this)">Cronómetro</button>
+    <button class="tab-btn" onclick="setTab('clasificacion',this)">Clasificación</button>
   </div>
+
+  <!-- TAB: CRONOMETRO -->
+  <div id="tab-cronometro">
+    <div class="section-title">Categoría</div>
+    <div class="filters" id="cat-filters"></div>
+
+    <div class="section-title">Distancia</div>
+    <div class="filters" id="dist-filters"></div>
+
+    <div class="search-wrap">
+      <input class="search-box" id="search" placeholder="Buscar por nombre, apellido o ID... (Enter = marcar meta si resultado único)" oninput="onSearch()" onkeydown="onSearchKey(event)">
+      <div class="search-hint" id="search-hint"></div>
+    </div>
+
+    <div class="runners-grid" id="runners-grid"></div>
+  </div>
+
+  <!-- TAB: CLASIFICACION -->
+  <div id="tab-clasificacion" style="display:none">
+    <div class="section-title">Filtrar por Distancia</div>
+    <div class="podium-filters" id="pod-dist-filters"></div>
+
+    <div class="section-title">Filtrar por Categoría</div>
+    <div class="podium-filters" id="pod-cat-filters"></div>
+
+    <div class="ranking-section" id="ranking-section"></div>
+  </div>
+
 </div>
 
 <script>
+/* ═══════════════════════════════════════════════════
+   PALETTES
+═══════════════════════════════════════════════════ */
 const CATS = {
-  'Full Body':    { bg:'#5C1525', border:'#993556', accent:'#F4C0D1', time:'#F4C0D1' },
-  'Kids':         { bg:'#0B3A28', border:'#1D9E75', accent:'#9FE1CB', time:'#9FE1CB' },
-  'Juvenil':      { bg:'#001A4A', border:'#1565C0', accent:'#90CAF9', time:'#90CAF9' },
-  'Senior':       { bg:'#3D2E00', border:'#D4AC00', accent:'#FFE566', time:'#FFE566' },
-  'Sénior':       { bg:'#3D2E00', border:'#D4AC00', accent:'#FFE566', time:'#FFE566' },
-  'Master':       { bg:'#1C0A3A', border:'#7B2FBE', accent:'#C77DFF', time:'#C77DFF' },
-  'Máster':       { bg:'#1C0A3A', border:'#7B2FBE', accent:'#C77DFF', time:'#C77DFF' },
-  'Comandante':   { bg:'#0F2206', border:'#3B6D11', accent:'#C0DD97', time:'#C0DD97' },
-  'Gran Maestro': { bg:'#1A1A18', border:'#6B6B68', accent:'#C8C6C0', time:'#C8C6C0' },
+  'Full Body':    { bg:'#3A0D18', border:'#993556', accent:'#F4C0D1' },
+  'Kids':         { bg:'#0A2A1E', border:'#1D9E75', accent:'#9FE1CB' },
+  'Juvenil':      { bg:'#001030', border:'#1565C0', accent:'#90CAF9' },
+  'Senior':       { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
+  'Sénior':       { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
+  'Master':       { bg:'#18082A', border:'#7B2FBE', accent:'#C77DFF' },
+  'Máster':       { bg:'#18082A', border:'#7B2FBE', accent:'#C77DFF' },
+  'Comandante':   { bg:'#0C1A04', border:'#3B6D11', accent:'#C0DD97' },
+  'Gran Maestro': { bg:'#141414', border:'#6B6B68', accent:'#C8C6C0' },
 };
 
 const DISTS = {
-  '2K':  { color:'#1D9E75', border:'#085041', text:'#9FE1CB' },
+  '2K':  { color:'#1D9E75', border:'#0D5C44', text:'#9FE1CB' },
   '6K':  { color:'#1565C0', border:'#0D3B7A', text:'#90CAF9' },
   '11K': { color:'#CC0000', border:'#8B0000', text:'#F7C1C1' },
 };
 
+/* ═══════════════════════════════════════════════════
+   DEMO DATA
+═══════════════════════════════════════════════════ */
 const DEMO = [
-  { id:'ATR-0001', nombres:'Carlos',    apellidos:'Vera',      genero:'M', distancia:'11K', categoria:'Sénior' },
-  { id:'ATR-0002', nombres:'María',     apellidos:'Loor',      genero:'F', distancia:'6K',  categoria:'Máster' },
-  { id:'ATR-0003', nombres:'Andrés',    apellidos:'Moreira',   genero:'M', distancia:'11K', categoria:'Gran Maestro' },
-  { id:'ATR-0004', nombres:'Lucía',     apellidos:'Ponce',     genero:'F', distancia:'6K',  categoria:'Juvenil' },
-  { id:'ATR-0005', nombres:'Fernanda',  apellidos:'Ríos',      genero:'F', distancia:'11K', categoria:'Full Body' },
-  { id:'ATR-0006', nombres:'Diego',     apellidos:'Zambrano',  genero:'M', distancia:'11K', categoria:'Full Body' },
-  { id:'ATR-0007', nombres:'Sofía',     apellidos:'Almeida',   genero:'F', distancia:'6K',  categoria:'Sénior' },
-  { id:'ATR-0008', nombres:'Roberto',   apellidos:'Chica',     genero:'M', distancia:'11K', categoria:'Comandante' },
-  { id:'ATR-0009', nombres:'Tomás',     apellidos:'Cevallos',  genero:'M', distancia:'2K',  categoria:'Kids' },
-  { id:'ATR-0010', nombres:'Isabella',  apellidos:'Muñoz',     genero:'F', distancia:'2K',  categoria:'Kids' },
-  { id:'ATR-0011', nombres:'Ana',       apellidos:'Cedeño',    genero:'F', distancia:'11K', categoria:'Gran Maestro' },
-  { id:'ATR-0012', nombres:'Martín',    apellidos:'Baque',     genero:'M', distancia:'6K',  categoria:'Máster' },
-  { id:'ATR-0013', nombres:'Valentina', apellidos:'Loza',      genero:'F', distancia:'6K',  categoria:'Juvenil' },
-  { id:'ATR-0014', nombres:'Emilio',    apellidos:'Vera',      genero:'M', distancia:'11K', categoria:'Comandante' },
-  { id:'ATR-0015', nombres:'Sara',      apellidos:'Pin',       genero:'F', distancia:'2K',  categoria:'Kids' },
+  { id:'ATR-0001', nombres:'Carlos',    apellidos:'Vera',       genero:'M', distancia:'11K', categoria:'Sénior' },
+  { id:'ATR-0002', nombres:'María',     apellidos:'Loor',       genero:'F', distancia:'6K',  categoria:'Máster' },
+  { id:'ATR-0003', nombres:'Andrés',    apellidos:'Moreira',    genero:'M', distancia:'11K', categoria:'Gran Maestro' },
+  { id:'ATR-0004', nombres:'Lucía',     apellidos:'Ponce',      genero:'F', distancia:'6K',  categoria:'Juvenil' },
+  { id:'ATR-0005', nombres:'Fernanda',  apellidos:'Ríos',       genero:'F', distancia:'11K', categoria:'Full Body', acNombres:'Diego', acApellidos:'Ríos' },
+  { id:'ATR-0006', nombres:'Diego',     apellidos:'Zambrano',   genero:'M', distancia:'11K', categoria:'Full Body', acNombres:'Ana',   acApellidos:'Zambrano' },
+  { id:'ATR-0007', nombres:'Sofía',     apellidos:'Almeida',    genero:'F', distancia:'6K',  categoria:'Sénior' },
+  { id:'ATR-0008', nombres:'Roberto',   apellidos:'Chica',      genero:'M', distancia:'11K', categoria:'Comandante' },
+  { id:'ATR-0009', nombres:'Tomás',     apellidos:'Cevallos',   genero:'M', distancia:'2K',  categoria:'Kids' },
+  { id:'ATR-0010', nombres:'Isabella',  apellidos:'Muñoz',      genero:'F', distancia:'2K',  categoria:'Kids' },
+  { id:'ATR-0011', nombres:'Ana',       apellidos:'Cedeño',     genero:'F', distancia:'11K', categoria:'Gran Maestro' },
+  { id:'ATR-0012', nombres:'Martín',    apellidos:'Baque',      genero:'M', distancia:'6K',  categoria:'Máster' },
+  { id:'ATR-0013', nombres:'Valentina', apellidos:'Loza',       genero:'F', distancia:'6K',  categoria:'Juvenil' },
+  { id:'ATR-0014', nombres:'Emilio',    apellidos:'Vera',       genero:'M', distancia:'11K', categoria:'Comandante' },
+  { id:'ATR-0015', nombres:'Sara',      apellidos:'Pin',        genero:'F', distancia:'2K',  categoria:'Kids' },
 ];
 
-let masterRunning=false, masterInterval=null, masterMs=0, masterOffset=0, masterStartTs=null;
-let catFilter='all', distFilter='all', runners=[];
-let podDistFilter='all', podCatFilter='all';
-let activeTab='cronometro';
+/* ═══════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════ */
+let masterRunning = false, masterInterval = null, masterMs = 0, masterOffset = 0, masterStartTs = null;
+let runners = [];
 
+// Multi-select sets
+let catFilters  = new Set(); // empty = all
+let distFilters = new Set(); // empty = all
+let podDistFilters = new Set();
+let podCatFilters  = new Set();
+
+let activeTab = 'cronometro';
+
+/* ═══════════════════════════════════════════════════
+   NORMALISE
+═══════════════════════════════════════════════════ */
 function normalizar(r) {
-  const m={'master':'Máster','máster':'Máster','senior':'Sénior','sénior':'Sénior',
+  const m = {
+    'master':'Máster','máster':'Máster','senior':'Sénior','sénior':'Sénior',
     'juvenil':'Juvenil','comandante':'Comandante','gran maestro':'Gran Maestro',
-    'kids':'Kids','full body':'Full Body'};
+    'kids':'Kids','full body':'Full Body'
+  };
   r.categoria = m[(r.categoria||'').toLowerCase().trim()] || r.categoria;
   r.distancia = (r.distancia||'').trim().toUpperCase();
   return r;
 }
+
 function initRunners(raw) {
-  runners = raw.map(r=>({...normalizar(r),elapsed:0,running:false,finished:false,finishTime:null,finishMs:0,startTs:null,offset:0}));
+  runners = raw.map(r => ({
+    ...normalizar({...r}),
+    elapsed:0, running:false, finished:false,
+    finishTime:null, finishMs:0, startTs:null, offset:0
+  }));
 }
 initRunners(DEMO);
 
+/* ═══════════════════════════════════════════════════
+   FORMAT
+═══════════════════════════════════════════════════ */
 function fmt(ms) {
-  const s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;
+  const s = Math.floor(ms/1000);
+  const h = Math.floor(s/3600);
+  const m = Math.floor((s%3600)/60);
+  const sc = s%60;
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`;
 }
 
+/* ═══════════════════════════════════════════════════
+   LOAD FROM SHEET
+═══════════════════════════════════════════════════ */
 async function loadFromSheet() {
-  const url=document.getElementById('script-url').value.trim();
-  if(!url){setStatus('Ingresa la URL primero.','err');return;}
+  const url = document.getElementById('script-url').value.trim();
+  if (!url) { setStatus('Ingresa la URL primero.','err'); return; }
   setStatus('Cargando...','');
   try {
-    const resp=await fetch(url+'?action=getCorredores');
-    const data=await resp.json();
-    if(data.status!=='ok'||!data.corredores) throw new Error('Respuesta invalida');
+    const resp = await fetch(url + '?action=getCorredores');
+    const data = await resp.json();
+    if (data.status !== 'ok' || !data.corredores) throw new Error('Respuesta inválida');
     initRunners(data.corredores);
-    setStatus(`Cargados ${runners.length} corredores`,'ok');
+    setStatus(`Cargados ${runners.length} corredores`, 'ok');
     renderAll();
-  } catch(err){setStatus('Error: '+err.message,'err');}
+  } catch(err) { setStatus('Error: ' + err.message, 'err'); }
 }
-function setStatus(msg,cls){const el=document.getElementById('load-status');el.textContent=msg;el.className='load-status '+(cls||'');}
+function setStatus(msg, cls) {
+  const el = document.getElementById('load-status');
+  el.textContent = msg;
+  el.className = 'load-status ' + (cls||'');
+}
 
-function setTab(tab,btn) {
-  activeTab=tab;
-  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');});
+/* ═══════════════════════════════════════════════════
+   TABS
+═══════════════════════════════════════════════════ */
+function setTab(tab, btn) {
+  activeTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('tab-cronometro').style.display   = tab==='cronometro'     ? '' : 'none';
-  document.getElementById('tab-clasificacion').style.display = tab==='clasificacion' ? '' : 'none';
-  if(tab==='clasificacion') renderPodium();
+  document.getElementById('tab-cronometro').style.display    = tab === 'cronometro'    ? '' : 'none';
+  document.getElementById('tab-clasificacion').style.display = tab === 'clasificacion' ? '' : 'none';
+  if (tab === 'clasificacion') renderPodium();
 }
 
+/* ═══════════════════════════════════════════════════
+   MASTER CLOCK
+═══════════════════════════════════════════════════ */
 function masterStart() {
-  if(masterRunning)return;
-  masterRunning=true;masterStartTs=Date.now()-masterOffset;
-  masterInterval=setInterval(tick,200);
-  runners.forEach(r=>{if(!r.finished){r.running=true;r.startTs=Date.now()-r.offset;}});
-  document.getElementById('btn-start').style.display='none';
-  document.getElementById('btn-pause').style.display='';
-  document.getElementById('master-display').className='master-time running';
+  if (masterRunning) return;
+  masterRunning = true;
+  masterStartTs = Date.now() - masterOffset;
+  masterInterval = setInterval(tick, 200);
+  runners.forEach(r => { if (!r.finished) { r.running = true; r.startTs = Date.now() - r.offset; }});
+  document.getElementById('btn-start').style.display = 'none';
+  document.getElementById('btn-pause').style.display = '';
+  document.getElementById('master-display').className = 'master-time running';
   renderCards();
 }
+
 function masterPause() {
-  if(!masterRunning)return;
-  masterRunning=false;clearInterval(masterInterval);masterOffset=masterMs;
-  runners.forEach(r=>{if(r.running){r.offset=Date.now()-r.startTs;r.running=false;}});
-  document.getElementById('btn-start').style.display='';
-  document.getElementById('btn-start').textContent='Reanudar';
-  document.getElementById('btn-pause').style.display='none';
-  document.getElementById('master-display').className='master-time';
+  if (!masterRunning) return;
+  masterRunning = false;
+  clearInterval(masterInterval);
+  masterOffset = masterMs;
+  runners.forEach(r => { if (r.running) { r.offset = Date.now() - r.startTs; r.running = false; }});
+  document.getElementById('btn-start').style.display = '';
+  document.getElementById('btn-start').textContent = 'Reanudar';
+  document.getElementById('btn-pause').style.display = 'none';
+  document.getElementById('master-display').className = 'master-time';
 }
+
 function masterReset() {
-  clearInterval(masterInterval);masterRunning=false;masterMs=0;masterOffset=0;
-  runners.forEach(r=>{r.elapsed=0;r.running=false;r.finished=false;r.finishTime=null;r.finishMs=0;r.startTs=null;r.offset=0;});
-  document.getElementById('master-display').textContent='00:00:00';
-  document.getElementById('master-display').className='master-time';
-  document.getElementById('btn-start').style.display='';
-  document.getElementById('btn-start').textContent='Iniciar largada';
-  document.getElementById('btn-pause').style.display='none';
+  clearInterval(masterInterval);
+  masterRunning = false; masterMs = 0; masterOffset = 0;
+  runners.forEach(r => { r.elapsed=0; r.running=false; r.finished=false; r.finishTime=null; r.finishMs=0; r.startTs=null; r.offset=0; });
+  document.getElementById('master-display').textContent = '00:00:00';
+  document.getElementById('master-display').className = 'master-time';
+  document.getElementById('btn-start').style.display = '';
+  document.getElementById('btn-start').textContent = 'Iniciar Largada';
+  document.getElementById('btn-pause').style.display = 'none';
   renderAll();
 }
+
 function tick() {
-  masterMs=Date.now()-masterStartTs;
-  document.getElementById('master-display').textContent=fmt(masterMs);
-  runners.forEach(r=>{
-    if(r.running&&!r.finished){r.elapsed=Date.now()-r.startTs;
-      const el=document.getElementById('rt-'+r.id);if(el)el.textContent=fmt(r.elapsed);}
+  masterMs = Date.now() - masterStartTs;
+  document.getElementById('master-display').textContent = fmt(masterMs);
+  runners.forEach(r => {
+    if (r.running && !r.finished) {
+      r.elapsed = Date.now() - r.startTs;
+      const el = document.getElementById('rt-' + r.id);
+      if (el) el.textContent = fmt(r.elapsed);
+    }
   });
   updateSmallStats();
 }
+
 function updateSmallStats() {
-  document.getElementById('s-running').textContent=runners.filter(r=>r.running&&!r.finished).length+' en carrera';
-  document.getElementById('s-finished').textContent=runners.filter(r=>r.finished).length+' finalizados';
-}
-function finishRunner(id) {
-  const r=runners.find(x=>x.id===id);if(!r||r.finished)return;
-  if(r.running)r.elapsed=Date.now()-r.startTs;
-  r.running=false;r.finished=true;r.finishMs=r.elapsed;r.finishTime=fmt(r.elapsed);
-  renderCards();renderStats();updateSmallStats();
-  if(activeTab==='clasificacion')renderPodium();
-}
-function resetRunner(id) {
-  const r=runners.find(x=>x.id===id);if(!r)return;
-  r.elapsed=0;r.running=false;r.finished=false;r.finishTime=null;r.finishMs=0;r.startTs=null;r.offset=0;
-  if(masterRunning){r.running=true;r.startTs=Date.now();}
-  renderCards();renderStats();updateSmallStats();
-  if(activeTab==='clasificacion')renderPodium();
-}
-function finishAll() {
-  runners.forEach(r=>{if(!r.finished){if(r.running)r.elapsed=Date.now()-r.startTs;r.running=false;r.finished=true;r.finishMs=r.elapsed;r.finishTime=fmt(r.elapsed);}});
-  renderCards();renderStats();updateSmallStats();
-  if(activeTab==='clasificacion')renderPodium();
+  document.getElementById('s-running').textContent  = runners.filter(r => r.running && !r.finished).length + ' en carrera';
+  document.getElementById('s-finished').textContent = runners.filter(r => r.finished).length + ' finalizados';
 }
 
-function setFilter(f,btn) {
-  catFilter=f;
-  document.querySelectorAll('#cat-filters .filter-btn').forEach(b=>{b.classList.remove('active');b.style.cssText='';});
-  btn.classList.add('active');
-  if(f!=='all'&&CATS[f]){btn.style.background=CATS[f].bg;btn.style.color=CATS[f].accent;btn.style.borderColor=CATS[f].border;}
-  else{btn.style.background='#1A1A1A';btn.style.color='#fff';btn.style.borderColor='#444';}
-  renderCards();
+/* ═══════════════════════════════════════════════════
+   RUNNER ACTIONS
+═══════════════════════════════════════════════════ */
+function finishRunner(id) {
+  const r = runners.find(x => x.id === id);
+  if (!r || r.finished) return;
+  if (r.running) r.elapsed = Date.now() - r.startTs;
+  r.running = false; r.finished = true;
+  r.finishMs = r.elapsed; r.finishTime = fmt(r.elapsed);
+  renderCards(); renderStats(); updateSmallStats();
+  if (activeTab === 'clasificacion') renderPodium();
 }
-function setDistFilter(f,btn) {
-  distFilter=f;
-  document.querySelectorAll('#dist-filters .filter-btn').forEach(b=>{b.classList.remove('active');b.style.cssText='';});
-  btn.classList.add('active');
-  if(f!=='all'&&DISTS[f]){btn.style.background=DISTS[f].color;btn.style.color='#fff';btn.style.borderColor=DISTS[f].color;}
-  else{btn.style.background='#1A1A1A';btn.style.color='#fff';btn.style.borderColor='#444';}
-  renderCards();
+
+function resetRunner(id) {
+  const r = runners.find(x => x.id === id);
+  if (!r) return;
+  r.elapsed=0; r.running=false; r.finished=false;
+  r.finishTime=null; r.finishMs=0; r.startTs=null; r.offset=0;
+  if (masterRunning) { r.running = true; r.startTs = Date.now(); }
+  renderCards(); renderStats(); updateSmallStats();
+  if (activeTab === 'clasificacion') renderPodium();
 }
-function setPodFilter(type,val,btn) {
-  if(type==='dist'){
-    podDistFilter=val;
-    document.querySelectorAll('.podium-filters button[data-pdist]').forEach(b=>{b.style.background='';b.style.color='';b.style.fontWeight='';});
+
+function finishAll() {
+  // Stop all individual timers
+  runners.forEach(r => {
+    if (!r.finished) {
+      if (r.running) r.elapsed = Date.now() - r.startTs;
+      r.running = false; r.finished = true;
+      r.finishMs = r.elapsed; r.finishTime = fmt(r.elapsed);
+    }
+  });
+  // Stop master clock too
+  clearInterval(masterInterval);
+  masterRunning = false;
+  masterOffset = masterMs;
+  document.getElementById('master-display').className = 'master-time';
+  document.getElementById('btn-start').style.display = '';
+  document.getElementById('btn-start').textContent = 'Reanudar';
+  document.getElementById('btn-pause').style.display = 'none';
+
+  renderCards(); renderStats(); updateSmallStats();
+  if (activeTab === 'clasificacion') renderPodium();
+}
+
+/* ═══════════════════════════════════════════════════
+   FILTERS — multi-select with toggle
+═══════════════════════════════════════════════════ */
+function toggleCatFilter(cat, btn) {
+  if (cat === 'all') {
+    catFilters.clear();
   } else {
-    podCatFilter=val;
-    document.querySelectorAll('.podium-filters button[data-pcat]').forEach(b=>{b.style.background='';b.style.color='';b.style.fontWeight='';});
+    if (catFilters.has(cat)) catFilters.delete(cat);
+    else catFilters.add(cat);
   }
-  if(btn){btn.style.background='#CC0000';btn.style.color='#fff';btn.style.borderColor='#CC0000';}
+  updateCatFilterUI();
+  renderCards();
+}
+
+function toggleDistFilter(dist, btn) {
+  if (dist === 'all') {
+    distFilters.clear();
+  } else {
+    if (distFilters.has(dist)) distFilters.delete(dist);
+    else distFilters.add(dist);
+  }
+  updateDistFilterUI();
+  renderCards();
+}
+
+function updateCatFilterUI() {
+  document.querySelectorAll('#cat-filters .filter-btn').forEach(btn => {
+    const val = btn.dataset.val;
+    if (val === 'all') {
+      const isAll = catFilters.size === 0;
+      btn.classList.toggle('active', isAll);
+      btn.style.background = isAll ? '#1A1A1A' : '';
+      btn.style.color = isAll ? '#fff' : '';
+      btn.style.borderColor = isAll ? '#444' : '';
+      btn.style.boxShadow = isAll ? '0 0 0 1px #fff' : '';
+    } else {
+      const c = CATS[val] || {bg:'#111',border:'#333',accent:'#888'};
+      const active = catFilters.has(val);
+      btn.classList.toggle('active', active);
+      btn.style.background = active ? c.bg : '';
+      btn.style.color = active ? c.accent : '';
+      btn.style.borderColor = active ? c.border : '';
+      btn.style.boxShadow = active ? `0 0 0 1px ${c.border}` : '';
+    }
+  });
+}
+
+function updateDistFilterUI() {
+  document.querySelectorAll('#dist-filters .filter-btn').forEach(btn => {
+    const val = btn.dataset.val;
+    if (val === 'all') {
+      const isAll = distFilters.size === 0;
+      btn.classList.toggle('active', isAll);
+      btn.style.background = isAll ? '#1A1A1A' : '';
+      btn.style.color = isAll ? '#fff' : '';
+      btn.style.borderColor = isAll ? '#444' : '';
+      btn.style.boxShadow = isAll ? '0 0 0 1px #fff' : '';
+    } else {
+      const c = DISTS[val] || {color:'#888',text:'#aaa',border:'#333'};
+      const active = distFilters.has(val);
+      btn.classList.toggle('active', active);
+      btn.style.background = active ? c.color + '33' : '';
+      btn.style.color = active ? c.text : '';
+      btn.style.borderColor = active ? c.color : '';
+      btn.style.boxShadow = active ? `0 0 0 1px ${c.color}` : '';
+    }
+  });
+}
+
+// Podium filters
+function togglePodDistFilter(dist) {
+  if (dist === 'all') podDistFilters.clear();
+  else {
+    if (podDistFilters.has(dist)) podDistFilters.delete(dist);
+    else podDistFilters.add(dist);
+  }
+  updatePodDistUI();
   renderPodium();
 }
 
-function renderFilters() {
-  const cats=[...new Set(runners.map(r=>r.categoria))].sort();
-  const dists=[...new Set(runners.map(r=>r.distancia))].sort((a,b)=>parseInt(a)-parseInt(b));
+function togglePodCatFilter(cat) {
+  if (cat === 'all') podCatFilters.clear();
+  else {
+    if (podCatFilters.has(cat)) podCatFilters.delete(cat);
+    else podCatFilters.add(cat);
+  }
+  updatePodCatUI();
+  renderPodium();
+}
 
-  const cf=document.getElementById('cat-filters');
-  cf.innerHTML=`<button class="filter-btn" style="background:#1A1A1A;color:#fff;border-color:#444" onclick="setFilter('all',this)">Todas (${runners.length})</button>`;
-  cats.forEach(cat=>{
-    const c=CATS[cat]||{bg:'#111',border:'#333',accent:'#888'};
-    const cnt=runners.filter(r=>r.categoria===cat).length;
-    cf.innerHTML+=`<button class="filter-btn" onclick="setFilter('${cat}',this)" style="border-color:${c.border};color:${c.accent};background:${c.bg}">
-      <span class="dot" style="background:${c.border}"></span>${cat} (${cnt})</button>`;
-  });
-
-  const df=document.getElementById('dist-filters');
-  df.innerHTML=`<button class="filter-btn" style="background:#1A1A1A;color:#fff;border-color:#444" onclick="setDistFilter('all',this)">Todas</button>`;
-  dists.forEach(d=>{
-    const c=DISTS[d]||{color:'#888',text:'#aaa',border:'#333'};
-    const cnt=runners.filter(r=>r.distancia===d).length;
-    df.innerHTML+=`<button class="filter-btn" onclick="setDistFilter('${d}',this)" style="border-color:${c.color};color:${c.text};background:rgba(0,0,0,0.4)">
-      <span class="dot" style="background:${c.color}"></span>${d} (${cnt})</button>`;
+function updatePodDistUI() {
+  document.querySelectorAll('#pod-dist-filters .filter-btn').forEach(btn => {
+    const val = btn.dataset.val;
+    if (val === 'all') {
+      const isAll = podDistFilters.size === 0;
+      btn.style.background = isAll ? '#CC0000' : '';
+      btn.style.color = isAll ? '#fff' : '';
+      btn.style.borderColor = isAll ? '#CC0000' : '';
+      btn.style.boxShadow = isAll ? '0 0 0 1px #CC0000' : '';
+    } else {
+      const c = DISTS[val] || {color:'#888',text:'#aaa'};
+      const active = podDistFilters.has(val);
+      btn.style.background = active ? c.color + '33' : '';
+      btn.style.color = active ? c.text : '';
+      btn.style.borderColor = active ? c.color : '';
+      btn.style.boxShadow = active ? `0 0 0 1px ${c.color}` : '';
+    }
   });
 }
 
+function updatePodCatUI() {
+  document.querySelectorAll('#pod-cat-filters .filter-btn').forEach(btn => {
+    const val = btn.dataset.val;
+    if (val === 'all') {
+      const isAll = podCatFilters.size === 0;
+      btn.style.background = isAll ? '#CC0000' : '';
+      btn.style.color = isAll ? '#fff' : '';
+      btn.style.borderColor = isAll ? '#CC0000' : '';
+      btn.style.boxShadow = isAll ? '0 0 0 1px #CC0000' : '';
+    } else {
+      const c = CATS[val] || {bg:'#111',border:'#333',accent:'#888'};
+      const active = podCatFilters.has(val);
+      btn.style.background = active ? c.bg : '';
+      btn.style.color = active ? c.accent : '';
+      btn.style.borderColor = active ? c.border : '';
+      btn.style.boxShadow = active ? `0 0 0 1px ${c.border}` : '';
+    }
+  });
+}
+
+/* ═══════════════════════════════════════════════════
+   SEARCH + ENTER LOGIC
+═══════════════════════════════════════════════════ */
+function getSearchMatches(query) {
+  if (!query) return runners;
+  const q = normalize(query);
+  return runners.filter(r => {
+    const fullName  = normalize(r.nombres + ' ' + r.apellidos);
+    const idStr     = normalize(r.id);
+    const acFull    = r.acNombres ? normalize(r.acNombres + ' ' + r.acApellidos) : '';
+    return fullName.includes(q) || idStr.includes(q) || acFull.includes(q);
+  });
+}
+
+function normalize(s) {
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function onSearch() {
+  renderCards();
+  updateSearchHint();
+}
+
+function updateSearchHint() {
+  const q = document.getElementById('search').value.trim();
+  const hint = document.getElementById('search-hint');
+  if (!q) { hint.textContent = ''; hint.className = 'search-hint'; return; }
+  const matches = getSearchMatches(q);
+  const unfinished = matches.filter(r => !r.finished);
+  if (unfinished.length === 1 && masterRunning) {
+    hint.textContent = `↵ Enter → Marcar meta: ${unfinished[0].nombres} ${unfinished[0].apellidos}`;
+    hint.className = 'search-hint ready';
+  } else if (matches.length === 0) {
+    hint.textContent = 'Sin resultados';
+    hint.className = 'search-hint';
+  } else {
+    hint.textContent = `${matches.length} corredor${matches.length !== 1 ? 'es' : ''} encontrado${matches.length !== 1 ? 's' : ''}`;
+    hint.className = 'search-hint';
+  }
+}
+
+function onSearchKey(e) {
+  if (e.key !== 'Enter') return;
+  const q = document.getElementById('search').value.trim();
+  if (!q) return;
+  const matches = getSearchMatches(q);
+  const unfinished = matches.filter(r => !r.finished);
+  if (unfinished.length === 1) {
+    finishRunner(unfinished[0].id);
+    document.getElementById('search').value = '';
+    updateSearchHint();
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER FILTERS
+═══════════════════════════════════════════════════ */
+function renderFilters() {
+  const cats  = [...new Set(runners.map(r => r.categoria))].sort();
+  const dists = [...new Set(runners.map(r => r.distancia))].sort((a,b) => parseInt(a)-parseInt(b));
+
+  const cf = document.getElementById('cat-filters');
+  cf.innerHTML = `<button class="filter-btn active" data-val="all" style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff" onclick="toggleCatFilter('all',this)">Todas (${runners.length})</button>`;
+  cats.forEach(cat => {
+    const c = CATS[cat] || {bg:'#111',border:'#333',accent:'#888'};
+    const cnt = runners.filter(r => r.categoria === cat).length;
+    cf.innerHTML += `<button class="filter-btn" data-val="${cat}" onclick="toggleCatFilter('${cat}',this)" style="border-color:${c.border};color:${c.accent}">
+      <span class="dot" style="background:${c.border}"></span>${cat} (${cnt})</button>`;
+  });
+
+  const df = document.getElementById('dist-filters');
+  df.innerHTML = `<button class="filter-btn active" data-val="all" style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff" onclick="toggleDistFilter('all',this)">Todas</button>`;
+  dists.forEach(d => {
+    const c = DISTS[d] || {color:'#888',text:'#aaa',border:'#333'};
+    const cnt = runners.filter(r => r.distancia === d).length;
+    df.innerHTML += `<button class="filter-btn" data-val="${d}" onclick="toggleDistFilter('${d}',this)" style="border-color:${c.color};color:${c.text}">
+      <span class="dot" style="background:${c.color}"></span>${d} (${cnt})</button>`;
+  });
+
+  updateCatFilterUI();
+  updateDistFilterUI();
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER STATS
+═══════════════════════════════════════════════════ */
 function renderStats() {
-  const finished=runners.filter(r=>r.finished).length;
-  const running=runners.filter(r=>r.running&&!r.finished).length;
-  const pending=runners.filter(r=>!r.running&&!r.finished).length;
-  const distStats=['2K','6K','11K'].map(d=>{
-    const total=runners.filter(r=>r.distancia===d).length;
-    const fin=runners.filter(r=>r.distancia===d&&r.finished).length;
-    if(!total)return'';
-    const c=DISTS[d];
-    return `<div class="stat-card" style="border-color:${c.border}"><div class="stat-label" style="color:${c.color}">${d}</div><div class="stat-val" style="color:${c.text};font-size:20px">${fin}<span style="font-size:12px;color:#333">/${total}</span></div></div>`;
+  const finished = runners.filter(r => r.finished).length;
+  const running  = runners.filter(r => r.running && !r.finished).length;
+  const pending  = runners.filter(r => !r.running && !r.finished).length;
+  const distStats = ['2K','6K','11K'].map(d => {
+    const total = runners.filter(r => r.distancia === d).length;
+    const fin   = runners.filter(r => r.distancia === d && r.finished).length;
+    if (!total) return '';
+    const c = DISTS[d];
+    return `<div class="stat-card" style="border-color:${c.border}">
+      <div class="stat-label" style="color:${c.color}">${d}</div>
+      <div class="stat-val" style="color:${c.text};font-size:30px">${fin}<span style="font-size:16px;color:#333">/${total}</span></div>
+    </div>`;
   }).join('');
-  document.getElementById('stats-row').innerHTML=`
+
+  document.getElementById('stats-row').innerHTML = `
     <div class="stat-card"><div class="stat-label">Total</div><div class="stat-val">${runners.length}</div></div>
-    <div class="stat-card" style="border-color:#1a3a1a"><div class="stat-label" style="color:#2ecc71">Meta</div><div class="stat-val" style="color:#2ecc71">${finished}</div></div>
+    <div class="stat-card" style="border-color:#1a4a1a"><div class="stat-label" style="color:#2ecc71">Meta</div><div class="stat-val" style="color:#2ecc71">${finished}</div></div>
     <div class="stat-card" style="border-color:#3a0000"><div class="stat-label" style="color:#CC0000">Corriendo</div><div class="stat-val" style="color:#CC0000">${running}</div></div>
     <div class="stat-card"><div class="stat-label">Pendientes</div><div class="stat-val" style="color:#333">${pending}</div></div>
     ${distStats}`;
 }
 
+/* ═══════════════════════════════════════════════════
+   RENDER CARDS
+═══════════════════════════════════════════════════ */
 function renderCards() {
-  const grid=document.getElementById('runners-grid');
-  const search=document.getElementById('search').value.toLowerCase();
-  let list=runners;
-  if(catFilter!=='all')list=list.filter(r=>r.categoria===catFilter);
-  if(distFilter!=='all')list=list.filter(r=>r.distancia===distFilter);
-  if(search)list=list.filter(r=>(r.nombres+' '+r.apellidos).toLowerCase().includes(search)||r.id.toLowerCase().includes(search));
-  list=[...list].sort((a,b)=>{
-    if(a.finished!==b.finished)return a.finished?1:-1;
-    if(a.running!==b.running)return a.running?-1:1;
-    return a.elapsed-b.elapsed;
-  });
-  if(!list.length){grid.innerHTML='<div class="empty-msg">Sin corredores con ese filtro</div>';return;}
+  const grid   = document.getElementById('runners-grid');
+  const search = document.getElementById('search').value.trim();
+  let list = runners;
 
-  grid.innerHTML=list.map(r=>{
-    const cat=r.finished?{bg:'#0A1A0A',border:'#2ecc71',accent:'#2ecc71',time:'#2ecc71'}:(CATS[r.categoria]||{bg:'#111',border:'#333',accent:'#888',time:'#333'});
-    const dist=DISTS[r.distancia]||{color:'#888',text:'#aaa',border:'#333'};
-    const isRunning=r.running&&!r.finished;
-    const cardBorder=r.finished?'#1a4a1a':(isRunning?cat.border:'#1A1A1A');
-    const dot=isRunning?`<span class="running-dot"></span>`:'';
+  // Search filter
+  if (search) list = getSearchMatches(search);
+
+  // Category multi-filter
+  if (catFilters.size > 0) list = list.filter(r => catFilters.has(r.categoria));
+
+  // Distance multi-filter
+  if (distFilters.size > 0) list = list.filter(r => distFilters.has(r.distancia));
+
+  // Sort: running first, then pending, then finished
+  list = [...list].sort((a,b) => {
+    if (a.finished !== b.finished) return a.finished ? 1 : -1;
+    if (a.running !== b.running)   return a.running  ? -1 : 1;
+    return a.elapsed - b.elapsed;
+  });
+
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty-msg">Sin corredores con ese filtro</div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(r => {
+    const isRunning = r.running && !r.finished;
+    const cat  = r.finished
+      ? {bg:'#0A1A0A', border:'#2ecc71', accent:'#2ecc71'}
+      : (CATS[r.categoria] || {bg:'#111', border:'#333', accent:'#888'});
+    const dist = DISTS[r.distancia] || {color:'#888', text:'#aaa', border:'#333'};
+    const cardBorder = r.finished ? '#1a4a1a' : (isRunning ? cat.border : '#1E1E1E');
+    const dot = isRunning ? `<span class="running-dot"></span>` : '';
+    const isFullBody = r.categoria === 'Full Body';
+
+    const partnerHtml = isFullBody && r.acNombres
+      ? `<div class="runner-name-partner">${r.acNombres} ${r.acApellidos}</div>`
+      : '';
 
     return `<div class="runner-card" style="border-color:${cardBorder}">
       <div class="card-header" style="background:${cat.bg}">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
           <div class="runner-id" style="color:${cat.accent}">${r.id}</div>
-          <span class="dist-badge" style="border-color:${dist.border};color:${dist.text};background:rgba(0,0,0,0.4)">${r.distancia}</span>
+          <span class="dist-badge" style="border-color:${dist.border};color:${dist.text};background:rgba(0,0,0,0.5)">${r.distancia}</span>
         </div>
         <div class="runner-name">${dot}${r.nombres} ${r.apellidos}</div>
+        ${partnerHtml}
         <div class="runner-cat" style="color:${cat.accent}">${r.categoria}</div>
         <div class="runner-meta">
           <span>${r.genero==='F'||r.genero==='Femenino'?'Femenino':'Masculino'}</span>
         </div>
       </div>
       <div class="card-body">
-        <div class="runner-time ${r.finished?'finished':(!r.running?'pending':'')}" id="rt-${r.id}" style="color:${r.finished?'#2ecc71':(isRunning?cat.time:'#252525')}">${fmt(r.elapsed)}</div>
-        ${r.finished?`<div class="finish-mark">Finalizado — ${r.finishTime}</div>`:''}
+        <div class="runner-time ${r.finished?'finished':(!r.running?'pending':'')}" id="rt-${r.id}"
+             style="color:${r.finished?'#2ecc71':(isRunning?cat.accent:'#252525')}">${fmt(r.elapsed)}</div>
+        ${r.finished ? `<div class="finish-mark">✓ Finalizado — ${r.finishTime}</div>` : ''}
         <div class="runner-actions">
-          ${!r.finished?`<button class="btn-go" onclick="finishRunner('${r.id}')" ${!masterRunning&&!r.running?'disabled':''}>Marcar meta</button>`:''}
-          <button class="btn-ghost" onclick="resetRunner('${r.id}')" style="padding:7px 12px">Reiniciar</button>
+          ${!r.finished ? `<button class="btn-go" onclick="finishRunner('${r.id}')" ${!masterRunning&&!r.running?'disabled':''}>Marcar Meta</button>` : ''}
+          <button class="btn-ghost" onclick="resetRunner('${r.id}')">Reiniciar</button>
         </div>
       </div>
     </div>`;
   }).join('');
 }
 
-function renderPodium() {
-  const pcf=document.getElementById('pod-cat-filters');
-  const cats=[...new Set(runners.filter(r=>r.finished).map(r=>r.categoria))].sort();
-  pcf.innerHTML=`<button class="filter-btn" data-pcat="all" onclick="setPodFilter('cat','all',this)" style="background:#1A1A1A;color:#fff;border-color:#444">Todas las categorias</button>`;
-  cats.forEach(cat=>{
-    const c=CATS[cat]||{bg:'#111',border:'#333',accent:'#888'};
-    pcf.innerHTML+=`<button class="filter-btn" data-pcat="${cat}" onclick="setPodFilter('cat','${cat}',this)" style="border-color:${c.border};color:${c.accent};background:${c.bg}">
+/* ═══════════════════════════════════════════════════
+   RENDER PODIUM / CLASIFICACION
+═══════════════════════════════════════════════════ */
+function renderPodiumFilters() {
+  const finished = runners.filter(r => r.finished);
+  const allDists = [...new Set(finished.map(r => r.distancia))].sort((a,b) => parseInt(a)-parseInt(b));
+  const allCats  = [...new Set(finished.map(r => r.categoria))].sort();
+
+  const pdf = document.getElementById('pod-dist-filters');
+  pdf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodDistFilter('all')" style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las distancias</button>`;
+  allDists.forEach(d => {
+    const c = DISTS[d] || {color:'#888',text:'#aaa'};
+    pdf.innerHTML += `<button class="filter-btn" data-val="${d}" onclick="togglePodDistFilter('${d}')" style="border-color:${c.color};color:${c.text}">
+      <span class="dot" style="background:${c.color}"></span>${d}</button>`;
+  });
+
+  const pcf = document.getElementById('pod-cat-filters');
+  pcf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodCatFilter('all')" style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las categorías</button>`;
+  allCats.forEach(cat => {
+    const c = CATS[cat] || {bg:'#111',border:'#333',accent:'#888'};
+    pcf.innerHTML += `<button class="filter-btn" data-val="${cat}" onclick="togglePodCatFilter('${cat}')" style="border-color:${c.border};color:${c.accent}">
       <span class="dot" style="background:${c.border}"></span>${cat}</button>`;
   });
 
-  let finished=runners.filter(r=>r.finished);
-  if(podDistFilter!=='all')finished=finished.filter(r=>r.distancia===podDistFilter);
-  if(podCatFilter!=='all')finished=finished.filter(r=>r.categoria===podCatFilter);
-  finished=[...finished].sort((a,b)=>a.finishMs-b.finishMs);
+  updatePodDistUI();
+  updatePodCatUI();
+}
 
-  const sec=document.getElementById('podium-section');
-  if(!finished.length){sec.innerHTML='<div class="podium-empty">Aun no hay corredores en meta</div>';return;}
+function renderPodium() {
+  renderPodiumFilters();
 
-  const distGroups = podDistFilter!=='all'
-    ? [podDistFilter]
-    : [...new Set(finished.map(r=>r.distancia))].sort((a,b)=>parseInt(a)-parseInt(b));
+  let finished = runners.filter(r => r.finished);
+  if (podDistFilters.size > 0) finished = finished.filter(r => podDistFilters.has(r.distancia));
+  if (podCatFilters.size  > 0) finished = finished.filter(r => podCatFilters.has(r.categoria));
+  finished = [...finished].sort((a,b) => a.finishMs - b.finishMs);
 
-  sec.innerHTML=distGroups.map(dist=>{
-    const catGroups = podCatFilter!=='all'
-      ? [podCatFilter]
-      : [...new Set(finished.filter(r=>r.distancia===dist).map(r=>r.categoria))].sort();
+  const sec = document.getElementById('ranking-section');
+  if (!finished.length) {
+    sec.innerHTML = '<div class="podium-empty">Aún no hay corredores en meta</div>';
+    return;
+  }
 
-    const distC=DISTS[dist]||{color:'#888',text:'#aaa'};
-    const grouped=catGroups.map(cat=>{
-      const group=finished.filter(r=>r.distancia===dist&&r.categoria===cat);
-      if(!group.length)return'';
-      const catC=CATS[cat]||{border:'#333',accent:'#888'};
-      const rows=group.map((r,i)=>{
-        const pos=i+1;
-        const posClass=pos===1?'pos-1':pos===2?'pos-2':pos===3?'pos-3':'pos-rest';
-        const posLabel=pos===1?'1':pos===2?'2':pos===3?'3':String(pos);
-        const isTop=pos<=3;
-        return `<tr class="${isTop?'pod-row-top':''}">
-          <td><div class="pos-num ${posClass}">${posLabel}</div></td>
+  // ── RANKING GENERAL ABSOLUTO ─────────────────────────
+  const generalRows = finished.map((r, i) => {
+    const pos   = i + 1;
+    const pCls  = pos===1?'pos-1':pos===2?'pos-2':pos===3?'pos-3':'pos-rest';
+    const dist  = DISTS[r.distancia]||{color:'#888',text:'#aaa',border:'#333'};
+    const cat   = CATS[r.categoria]||{border:'#333',accent:'#888'};
+    const isFullBody = r.categoria === 'Full Body' && r.acNombres;
+    const partner = isFullBody ? `<div class="pod-name-partner">${r.acNombres} ${r.acApellidos}</div>` : '';
+    const medal = pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
+    return `<tr>
+      <td class="pos-cell">
+        <div class="pos-num ${pCls}">${pos}</div>
+        ${medal ? `<span class="medal">${medal}</span>` : ''}
+      </td>
+      <td>
+        <div class="pod-name">${r.nombres} ${r.apellidos}</div>
+        ${partner}
+        <div class="pod-id">${r.id}</div>
+      </td>
+      <td>
+        <div class="pod-cat-cell" style="color:${cat.accent}">${r.categoria}</div>
+        <span class="pod-dist-badge" style="border-color:${dist.border};color:${dist.text};background:rgba(0,0,0,0.5)">${r.distancia}</span>
+      </td>
+      <td>
+        <div class="pod-time ${pos===1?'best':pos<=3?'top3':''}">${r.finishTime}</div>
+      </td>
+    </tr>`;
+  }).join('');
+
+  let html = `
+    <div class="ranking-general">
+      <div class="ranking-general-header">
+        <div>
+          <div class="ranking-general-title">Ranking General Absoluto</div>
+          <div class="ranking-general-sub">${finished.length} finalista${finished.length!==1?'s':''} · ordenado por tiempo</div>
+        </div>
+      </div>
+      <table class="ranking-table">
+        <thead><tr>
+          <th style="width:60px">Pos</th>
+          <th>Corredor</th>
+          <th>Cat · Dist</th>
+          <th>Tiempo</th>
+        </tr></thead>
+        <tbody>${generalRows}</tbody>
+      </table>
+    </div>`;
+
+  // ── POR DISTANCIA Y CATEGORÍA ─────────────────────────
+  const dists = [...new Set(finished.map(r => r.distancia))].sort((a,b) => parseInt(a)-parseInt(b));
+
+  dists.forEach(dist => {
+    const distRunners = finished.filter(r => r.distancia === dist);
+    const distC = DISTS[dist] || {color:'#888',text:'#aaa'};
+    html += `<div style="margin-bottom:6px">
+      <div class="dist-divider">
+        <div class="dist-divider-line"></div>
+        <div class="dist-divider-label" style="color:${distC.text}">${dist}</div>
+        <div class="dist-divider-line"></div>
+      </div>`;
+
+    const cats = [...new Set(distRunners.map(r => r.categoria))].sort();
+    cats.forEach(cat => {
+      const group = distRunners.filter(r => r.categoria === cat);
+      if (!group.length) return;
+      const catC = CATS[cat] || {border:'#333',accent:'#888',bg:'#111'};
+      const rows = group.map((r, i) => {
+        const pos   = i + 1;
+        const pCls  = pos===1?'pos-1':pos===2?'pos-2':pos===3?'pos-3':'pos-rest';
+        const medal = pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
+        const isFullBody = r.categoria === 'Full Body' && r.acNombres;
+        const partner = isFullBody ? `<div class="pod-name-partner">${r.acNombres} ${r.acApellidos}</div>` : '';
+        return `<tr>
+          <td class="pos-cell">
+            <div class="pos-num ${pCls}">${pos}</div>
+            ${medal ? `<span class="medal">${medal}</span>` : ''}
+          </td>
           <td>
             <div class="pod-name">${r.nombres} ${r.apellidos}</div>
+            ${partner}
             <div class="pod-id">${r.id}</div>
           </td>
-          <td><div class="pod-cat" style="color:${catC.accent}"><span class="cat-stripe" style="background:${catC.border}"></span>${cat}</div></td>
+          <td><div class="pod-cat-cell" style="color:${catC.accent}">${cat}</div></td>
           <td><div class="pod-time ${pos===1?'best':''}">${r.finishTime}</div></td>
         </tr>`;
       }).join('');
-      return `<div class="podium-group">
-        <div class="podium-group-title" style="color:${catC.accent}">${dist} · ${cat} — ${group.length} finalista${group.length!==1?'s':''}</div>
-        <table class="podium-table">
+
+      html += `<div class="podium-group">
+        <div class="podium-group-header" style="border-left-color:${catC.border}">
+          <div class="podium-group-title" style="color:${catC.accent}">
+            <span class="dot" style="background:${catC.border}"></span>${dist} · ${cat}
+          </div>
+          <div class="podium-group-count">${group.length} finalista${group.length!==1?'s':''}</div>
+        </div>
+        <table class="ranking-table">
           <thead><tr>
-            <th style="width:40px">Pos</th>
+            <th style="width:60px">Pos</th>
             <th>Corredor</th>
-            <th>Categoria</th>
+            <th>Categoría</th>
             <th>Tiempo</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>`;
-    }).join('');
+    });
 
-    return `<div style="margin-bottom:8px">
-      <div class="section-title" style="color:${distC.text};border-left-color:${distC.color}">${dist} — Resultados por categoria</div>
-      ${grouped||'<div class="podium-empty">Sin finalistas en esta categoria</div>'}
-    </div>`;
-  }).join('');
+    html += '</div>';
+  });
+
+  sec.innerHTML = html;
 }
 
-function renderAll(){renderFilters();renderStats();renderCards();updateSmallStats();}
+/* ═══════════════════════════════════════════════════
+   RENDER ALL
+═══════════════════════════════════════════════════ */
+function renderAll() {
+  renderFilters();
+  renderStats();
+  renderCards();
+  updateSmallStats();
+}
+
 renderAll();
 </script>
+</body>
+</html>
