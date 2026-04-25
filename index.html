@@ -59,102 +59,24 @@ body {
   background: linear-gradient(90deg, transparent, var(--red), transparent);
   opacity: 0.5;
 }
-.hero-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  line-height: 1;
-}
+.hero-brand { display: flex; flex-direction: column; gap: 0; line-height: 1; }
 .hero-eyebrow {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 6px;
-  color: var(--red);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  opacity: 0.9;
+  font-size: 11px; font-weight: 700; letter-spacing: 6px;
+  color: var(--red); text-transform: uppercase; margin-bottom: 6px; opacity: 0.9;
 }
-.hero-title {
-  display: flex;
-  align-items: baseline;
-  gap: 0;
-}
-.hero-t1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 88px;
-  color: var(--text);
-  letter-spacing: 4px;
-  line-height: 0.9;
-}
-.hero-t2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 88px;
-  color: var(--red);
-  letter-spacing: 4px;
-  line-height: 0.9;
-  margin-left: 16px;
-}
-.hero-t3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 88px;
-  color: var(--bg4);
-  letter-spacing: 4px;
-  line-height: 0.9;
-  margin-left: 16px;
-}
-.hero-sub {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 10px;
-}
-.hero-sub-line {
-  width: 40px;
-  height: 2px;
-  background: var(--red);
-  opacity: 0.5;
-}
-.hero-sub-text {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 5px;
-  color: var(--text3);
-  text-transform: uppercase;
-}
-.hero-meta {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-.hero-date {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 36px;
-  color: var(--red);
-  letter-spacing: 3px;
-  line-height: 1;
-}
-.hero-place {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text4);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.hero-live {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 6px;
-  align-items: flex-end;
-}
-.hero-live-item {
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
+.hero-title { display: flex; align-items: baseline; gap: 0; }
+.hero-t1 { font-family: 'Bebas Neue', sans-serif; font-size: 88px; color: var(--text); letter-spacing: 4px; line-height: 0.9; }
+.hero-t2 { font-family: 'Bebas Neue', sans-serif; font-size: 88px; color: var(--red); letter-spacing: 4px; line-height: 0.9; margin-left: 16px; }
+.hero-t3 { font-family: 'Bebas Neue', sans-serif; font-size: 88px; color: var(--bg4); letter-spacing: 4px; line-height: 0.9; margin-left: 16px; }
+.hero-sub { display: flex; align-items: center; gap: 16px; margin-top: 10px; }
+.hero-sub-line { width: 40px; height: 2px; background: var(--red); opacity: 0.5; }
+.hero-sub-text { font-size: 13px; font-weight: 600; letter-spacing: 5px; color: var(--text3); text-transform: uppercase; }
+.hero-meta { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.hero-date { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--red); letter-spacing: 3px; line-height: 1; }
+.hero-place { font-size: 11px; font-weight: 600; color: var(--text4); letter-spacing: 3px; text-transform: uppercase; }
+.hero-live { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; align-items: flex-end; }
+.hero-live-item { font-size: 12px; letter-spacing: 1px; font-weight: 600; }
 
 /* ═══════════════════════════════════════
    APP WRAPPER
@@ -165,28 +87,15 @@ body {
    LOAD SECTION
 ═══════════════════════════════════════ */
 .load-section {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 20px;
-  margin: 16px 0 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 20px; margin: 16px 0 14px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
 .load-section input[type=text] {
-  flex: 1;
-  min-width: 200px;
-  padding: 9px 14px;
-  border: 1px solid var(--border2);
-  border-radius: 6px;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 13px;
-  font-family: 'Barlow Condensed', sans-serif;
-  outline: none;
-  letter-spacing: 0.5px;
+  flex: 1; min-width: 200px; padding: 9px 14px;
+  border: 1px solid var(--border2); border-radius: 6px;
+  background: var(--bg); color: var(--text); font-size: 13px;
+  font-family: 'Barlow Condensed', sans-serif; outline: none; letter-spacing: 0.5px;
 }
 .load-section input:focus { border-color: var(--red); }
 .load-status { font-size: 12px; color: var(--text3); flex: 1; min-width: 200px; }
@@ -197,32 +106,15 @@ body {
    MASTER CLOCK
 ═══════════════════════════════════════ */
 .master-clock {
-  background: var(--bg2);
-  border: 1px solid var(--red-dark);
-  border-radius: 12px;
-  padding: 22px 28px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  background: var(--bg2); border: 1px solid var(--red-dark);
+  border-radius: 12px; padding: 22px 28px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
 }
-.master-label {
-  font-size: 10px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 6px;
-  font-weight: 700;
-}
+.master-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 6px; font-weight: 700; }
 .master-time {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 80px;
-  letter-spacing: 6px;
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  transition: color 0.3s;
+  font-family: 'Bebas Neue', sans-serif; font-size: 80px;
+  letter-spacing: 6px; color: var(--text); font-variant-numeric: tabular-nums;
+  line-height: 1; transition: color 0.3s;
 }
 .master-time.running { color: var(--red); }
 .master-btns { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; flex: 1; justify-content: flex-end; }
@@ -231,19 +123,10 @@ body {
    BUTTONS
 ═══════════════════════════════════════ */
 button {
-  border: 1px solid var(--border2);
-  background: var(--bg3);
-  color: var(--text3);
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: 700;
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
+  border: 1px solid var(--border2); background: var(--bg3); color: var(--text3);
+  border-radius: 6px; padding: 10px 20px; font-size: 12px; font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.15s; white-space: nowrap;
 }
 button:hover { background: var(--bg4); color: var(--text); border-color: var(--bg5); }
 button:active { transform: scale(0.97); }
@@ -257,57 +140,20 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
 /* ═══════════════════════════════════════
    STATS ROW
 ═══════════════════════════════════════ */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 8px;
-  margin-bottom: 14px;
-}
-.stat-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 14px;
-}
-.stat-label {
-  font-size: 9px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 4px;
-  font-weight: 700;
-}
-.stat-val {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 36px;
-  color: var(--text);
-  line-height: 1;
-}
+.stats-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; margin-bottom: 14px; }
+.stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.stat-label { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; font-weight: 700; }
+.stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--text); line-height: 1; }
 
 /* ═══════════════════════════════════════
    TABS
 ═══════════════════════════════════════ */
-.tab-bar {
-  display: flex;
-  gap: 0;
-  margin-bottom: 16px;
-  border-bottom: 2px solid var(--border);
-}
+.tab-bar { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); }
 .tab-btn {
-  background: none;
-  border: none;
-  border-bottom: 3px solid transparent;
-  color: var(--text4);
-  padding: 12px 24px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 0;
-  transition: all 0.2s;
-  margin-bottom: -2px;
-  font-family: 'Barlow Condensed', sans-serif;
+  background: none; border: none; border-bottom: 3px solid transparent;
+  color: var(--text4); padding: 12px 24px; font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; cursor: pointer; border-radius: 0;
+  transition: all 0.2s; margin-bottom: -2px; font-family: 'Barlow Condensed', sans-serif;
 }
 .tab-btn:hover { color: var(--text2); background: none; }
 .tab-btn.active { color: var(--text); border-bottom-color: var(--red); background: none; }
@@ -316,15 +162,9 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
    SECTION TITLE
 ═══════════════════════════════════════ */
 .section-title {
-  font-size: 9px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 8px;
-  margin-top: 14px;
-  border-left: 3px solid var(--red);
-  padding-left: 10px;
-  font-weight: 700;
+  font-size: 9px; color: var(--text3); text-transform: uppercase;
+  letter-spacing: 4px; margin-bottom: 8px; margin-top: 14px;
+  border-left: 3px solid var(--red); padding-left: 10px; font-weight: 700;
 }
 
 /* ═══════════════════════════════════════
@@ -332,278 +172,136 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
 ═══════════════════════════════════════ */
 .filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .filter-btn {
-  border-radius: 24px;
-  padding: 6px 16px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-  border: 1.5px solid var(--border2);
-  background: var(--bg2);
-  color: var(--text3);
-  font-family: 'Barlow Condensed', sans-serif;
+  border-radius: 24px; padding: 6px 16px; font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.15s;
+  white-space: nowrap; border: 1.5px solid var(--border2); background: var(--bg2);
+  color: var(--text3); font-family: 'Barlow Condensed', sans-serif;
 }
 .filter-btn:hover { color: var(--text2); border-color: var(--bg5); background: var(--bg3); }
-.filter-btn.active {
-  box-shadow: 0 0 0 1px currentColor;
-}
+.filter-btn.active { box-shadow: 0 0 0 1px currentColor; }
 
 /* ═══════════════════════════════════════
-   SEARCH
+   SEARCH (cronometro)
 ═══════════════════════════════════════ */
 .search-wrap { margin: 12px 0; }
 .search-box {
-  width: 100%;
-  padding: 12px 18px;
-  border: 1.5px solid var(--border2);
-  border-radius: 8px;
-  background: var(--bg2);
-  color: var(--text);
-  font-size: 16px;
-  font-family: 'Barlow Condensed', sans-serif;
-  outline: none;
-  letter-spacing: 0.5px;
+  width: 100%; padding: 12px 18px; border: 1.5px solid var(--border2);
+  border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 16px;
+  font-family: 'Barlow Condensed', sans-serif; outline: none; letter-spacing: 0.5px;
   transition: border-color 0.2s;
 }
 .search-box:focus { border-color: var(--red); }
 .search-box::placeholder { color: var(--text4); }
-.search-hint {
-  font-size: 11px;
-  color: var(--text4);
-  margin-top: 5px;
-  letter-spacing: 1px;
-  padding-left: 4px;
-}
+.search-hint { font-size: 11px; color: var(--text4); margin-top: 5px; letter-spacing: 1px; padding-left: 4px; }
 .search-hint.ready { color: var(--green); }
+
+/* ═══════════════════════════════════════
+   SEARCH CLASIFICACION
+═══════════════════════════════════════ */
+.clasi-search-wrap { margin: 12px 0 16px; position: relative; }
+.clasi-search-box {
+  width: 100%; padding: 13px 44px 13px 18px; border: 1.5px solid var(--border2);
+  border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 16px;
+  font-family: 'Barlow Condensed', sans-serif; outline: none; letter-spacing: 0.5px;
+  transition: border-color 0.2s;
+}
+.clasi-search-box:focus { border-color: var(--red); }
+.clasi-search-box::placeholder { color: var(--text4); }
+.clasi-search-clear {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--text4); font-size: 18px;
+  cursor: pointer; padding: 4px; letter-spacing: 0; text-transform: none;
+  font-weight: 400; font-family: sans-serif; line-height: 1;
+}
+.clasi-search-clear:hover { color: var(--text); background: none; }
+
+/* Search results panel */
+.clasi-search-results {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 10px; overflow: hidden; margin-bottom: 20px;
+}
+.clasi-search-results-header {
+  background: #1a0000; padding: 10px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.clasi-search-results-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  color: var(--red); text-transform: uppercase;
+}
+.clasi-search-results-count {
+  font-size: 10px; color: var(--text4); letter-spacing: 1px;
+}
+.clasi-result-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 160px 120px 130px;
+  gap: 0;
+  border-bottom: 1px solid #111;
+  align-items: center;
+  padding: 12px 18px;
+  transition: background 0.1s;
+}
+.clasi-result-row:last-child { border-bottom: none; }
+.clasi-result-row:hover { background: rgba(255,255,255,0.02); }
+.clasi-result-pos { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; }
+.clasi-result-name { font-size: 17px; font-weight: 700; color: var(--text); }
+.clasi-result-partner { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.clasi-result-id { font-size: 10px; color: var(--text4); font-family: 'Bebas Neue', sans-serif; letter-spacing: 1.5px; margin-top: 2px; }
+.clasi-result-cat { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.clasi-result-dist { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; border: 1px solid; margin-top: 4px; }
+.clasi-result-pos-cat { font-size: 12px; color: var(--text3); letter-spacing: 0.5px; }
+.clasi-result-time { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; }
+.clasi-no-results { text-align: center; padding: 48px; color: var(--text4); font-size: 13px; text-transform: uppercase; letter-spacing: 3px; }
 
 /* ═══════════════════════════════════════
    RUNNER CARDS GRID
 ═══════════════════════════════════════ */
-.runners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
-}
-
-.runner-card {
-  border-radius: 12px;
-  border: 1.5px solid;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.15s;
-}
+.runners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.runner-card { border-radius: 12px; border: 1.5px solid; overflow: hidden; transition: border-color 0.2s, transform 0.15s; }
 .runner-card:hover { transform: translateY(-1px); }
-
 .card-header { padding: 16px 20px 14px; }
 .card-body { background: #0A0A0A; padding: 16px 20px; }
-
-.runner-id {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
-  letter-spacing: 3px;
-  margin-bottom: 6px;
-  line-height: 1;
-}
-.runner-name {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: 0.5px;
-  line-height: 1.15;
-  margin-bottom: 4px;
-}
-.runner-name-partner {
-  font-size: 17px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.runner-name-partner::before {
-  content: '+';
-  font-size: 14px;
-  opacity: 0.5;
-}
-.runner-cat {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.runner-meta {
-  font-size: 12px;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.runner-time {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 58px;
-  letter-spacing: 4px;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  margin-bottom: 12px;
-  color: var(--text);
-}
+.runner-id { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px; margin-bottom: 6px; line-height: 1; }
+.runner-name { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; line-height: 1.15; margin-bottom: 4px; }
+.runner-name-partner { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.runner-name-partner::before { content: '+'; font-size: 14px; opacity: 0.5; }
+.runner-cat { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.runner-meta { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; }
+.runner-time { font-family: 'Bebas Neue', sans-serif; font-size: 58px; letter-spacing: 4px; font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 12px; color: var(--text); }
 .runner-time.finished { color: var(--green); }
 .runner-time.pending { color: var(--text4); }
-
-.finish-mark {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 12px;
-}
-
+.finish-mark { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
 .runner-actions { display: flex; gap: 8px; }
 .runner-actions button { flex: 1; font-size: 11px; padding: 9px 10px; }
-
-.dist-badge {
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border: 1.5px solid;
-  white-space: nowrap;
-}
-
-.running-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--red);
-  margin-right: 6px;
-  vertical-align: middle;
-  animation: blink 0.9s ease-in-out infinite;
-}
+.dist-badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 24px; text-transform: uppercase; letter-spacing: 2px; border: 1.5px solid; white-space: nowrap; }
+.running-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--red); margin-right: 6px; vertical-align: middle; animation: blink 0.9s ease-in-out infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-.empty-msg {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 80px;
-  color: var(--text4);
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; vertical-align: middle; margin-right: 6px; }
+.empty-msg { grid-column: 1 / -1; text-align: center; padding: 80px; color: var(--text4); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; }
 
 /* ═══════════════════════════════════════
    CLASIFICACION / PODIUM
 ═══════════════════════════════════════ */
 .podium-filters { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
-
 .ranking-section { margin-top: 6px; }
-
-/* Ranking General */
-.ranking-general {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-.ranking-general-header {
-  background: linear-gradient(90deg, var(--red-dark), #1a0000);
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.ranking-general-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
-  letter-spacing: 4px;
-  color: var(--text);
-}
-.ranking-general-sub {
-  font-size: 10px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-
-/* Category group */
+.ranking-general { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 24px; }
+.ranking-general-header { background: linear-gradient(90deg, var(--red-dark), #1a0000); padding: 14px 22px; display: flex; align-items: center; gap: 12px; }
+.ranking-general-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: var(--text); }
+.ranking-general-sub { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
 .podium-group { margin-bottom: 28px; }
-.podium-group-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  padding: 10px 16px;
-  background: var(--bg2);
-  border-radius: 8px;
-  border-left: 3px solid var(--red);
-}
-.podium-group-title {
-  font-size: 11px;
-  color: var(--text2);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 700;
-}
-.podium-group-count {
-  font-size: 10px;
-  color: var(--text4);
-  letter-spacing: 1px;
-  margin-left: auto;
-}
-
-/* Ranking table */
+.podium-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; padding: 10px 16px; background: var(--bg2); border-radius: 8px; border-left: 3px solid var(--red); }
+.podium-group-title { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
+.podium-group-count { font-size: 10px; color: var(--text4); letter-spacing: 1px; margin-left: auto; }
 .ranking-table { width: 100%; border-collapse: collapse; }
-.ranking-table th {
-  font-size: 9px;
-  color: var(--text4);
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  padding: 8px 14px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  font-weight: 700;
-  background: var(--bg);
-}
-.ranking-table td {
-  padding: 11px 14px;
-  border-bottom: 1px solid #111;
-  vertical-align: middle;
-}
+.ranking-table th { font-size: 9px; color: var(--text4); text-transform: uppercase; letter-spacing: 2.5px; padding: 8px 14px; text-align: left; border-bottom: 1px solid var(--border); font-weight: 700; background: var(--bg); }
+.ranking-table td { padding: 11px 14px; border-bottom: 1px solid #111; vertical-align: middle; }
 .ranking-table tr:last-child td { border-bottom: none; }
 .ranking-table tr:hover td { background: rgba(255,255,255,0.02); }
-
 .pos-cell { width: 50px; text-align: center; }
-.pos-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
-  line-height: 1;
-}
+.pos-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; }
 .pos-1 { color: #FFD700; }
 .pos-2 { color: #C0C0C0; }
 .pos-3 { color: #CD7F32; }
 .pos-rest { color: var(--text4); font-size: 20px; }
-
 .pod-name { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
 .pod-name-partner { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
 .pod-id { font-size: 10px; color: var(--text4); letter-spacing: 1.5px; margin-top: 2px; font-family: 'Bebas Neue', sans-serif; }
@@ -612,28 +310,11 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
 .pod-time { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--text); }
 .pod-time.best { color: var(--green); }
 .pod-time.top3 { color: #FFD700; }
-
 .podium-empty { text-align: center; padding: 60px; color: var(--text4); font-size: 13px; text-transform: uppercase; letter-spacing: 3px; }
-
-/* Medal icons */
 .medal { font-size: 18px; display: block; margin-top: 2px; }
-
-/* ═══════════════════════════════════════
-   DIST SECTION DIVIDER
-═══════════════════════════════════════ */
-.dist-divider {
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.dist-divider { margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
 .dist-divider-line { flex: 1; height: 1px; background: var(--border); }
-.dist-divider-label {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-  letter-spacing: 4px;
-  padding: 0 4px;
-}
+.dist-divider-label { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 4px; padding: 0 4px; }
 </style>
 </head>
 <body>
@@ -718,6 +399,16 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
     <div class="section-title">Filtrar por Categoría</div>
     <div class="podium-filters" id="pod-cat-filters"></div>
 
+    <!-- BUSCADOR CLASIFICACIÓN -->
+    <div class="section-title">Buscar Corredor</div>
+    <div class="clasi-search-wrap">
+      <input class="clasi-search-box" id="clasi-search"
+        placeholder="Buscar por nombre, apellido o ID (ej: ATR-0001)..."
+        oninput="onClasiSearch()" onkeydown="if(event.key==='Escape'){clearClasiSearch()}">
+      <button class="clasi-search-clear" id="clasi-clear" onclick="clearClasiSearch()" style="display:none">✕</button>
+    </div>
+    <div id="clasi-search-results" style="display:none"></div>
+
     <div class="ranking-section" id="ranking-section"></div>
   </div>
 
@@ -725,19 +416,38 @@ button:disabled { opacity: 0.2; cursor: default; transform: none; }
 
 <script>
 /* ═══════════════════════════════════════════════════
-   PALETTES
+   PALETTES — nombres exactos como vienen del sheet
 ═══════════════════════════════════════════════════ */
 const CATS = {
-  'Full Body':    { bg:'#3A0D18', border:'#993556', accent:'#F4C0D1' },
-  'Kids':         { bg:'#0A2A1E', border:'#1D9E75', accent:'#9FE1CB' },
-  'Juvenil':      { bg:'#001030', border:'#1565C0', accent:'#90CAF9' },
-  'Senior':       { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
-  'Sénior':       { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
-  'Master':       { bg:'#18082A', border:'#7B2FBE', accent:'#C77DFF' },
-  'Máster':       { bg:'#18082A', border:'#7B2FBE', accent:'#C77DFF' },
-  'Comandante':   { bg:'#0C1A04', border:'#3B6D11', accent:'#C0DD97' },
-  'Gran Maestro': { bg:'#141414', border:'#6B6B68', accent:'#C8C6C0' },
+  /* ── MASTER/FULL BODY ──────────── MORADO ── */
+  'Master/Full Body':       { bg:'#18082A', border:'#7B2FBE', accent:'#C77DFF' },
+
+  /* ── COMANDANTE/GRAN MAESTRO ───── VERDE ─── */
+  'Comandante/Gran Maestro':{ bg:'#0B1A05', border:'#3B7A10', accent:'#A8E063' },
+
+  /* ── JUVENIL ───────────────────── ROJO ──── */
+  'Juvenil':                { bg:'#1F0000', border:'#CC0000', accent:'#FF7070' },
+
+  /* ── SÉNIOR / SENIOR ───────────── AMARILLO  */
+  'Sénior':                 { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
+  'Senior':                 { bg:'#2A1F00', border:'#D4AC00', accent:'#FFE566' },
+
+  /* ── KIDS (sin cambio de color pedido) ────── */
+  'Kids':                   { bg:'#0A2A1E', border:'#1D9E75', accent:'#9FE1CB' },
 };
+
+/* Función helper: obtener paleta para una categoría (con fallback robusto) */
+function getCat(cat) {
+  if (!cat) return { bg:'#111', border:'#333', accent:'#888' };
+  // Coincidencia exacta primero
+  if (CATS[cat]) return CATS[cat];
+  // Buscar de forma case-insensitive con normalización básica
+  const norm = cat.toLowerCase().trim();
+  for (const key of Object.keys(CATS)) {
+    if (key.toLowerCase() === norm) return CATS[key];
+  }
+  return { bg:'#111', border:'#333', accent:'#888' };
+}
 
 const DISTS = {
   '2K':  { color:'#1D9E75', border:'#0D5C44', text:'#9FE1CB' },
@@ -750,19 +460,19 @@ const DISTS = {
 ═══════════════════════════════════════════════════ */
 const DEMO = [
   { id:'ATR-0001', nombres:'Carlos',    apellidos:'Vera',       genero:'M', distancia:'11K', categoria:'Sénior' },
-  { id:'ATR-0002', nombres:'María',     apellidos:'Loor',       genero:'F', distancia:'6K',  categoria:'Máster' },
-  { id:'ATR-0003', nombres:'Andrés',    apellidos:'Moreira',    genero:'M', distancia:'11K', categoria:'Gran Maestro' },
+  { id:'ATR-0002', nombres:'María',     apellidos:'Loor',       genero:'F', distancia:'6K',  categoria:'Master/Full Body' },
+  { id:'ATR-0003', nombres:'Andrés',    apellidos:'Moreira',    genero:'M', distancia:'11K', categoria:'Comandante/Gran Maestro' },
   { id:'ATR-0004', nombres:'Lucía',     apellidos:'Ponce',      genero:'F', distancia:'6K',  categoria:'Juvenil' },
-  { id:'ATR-0005', nombres:'Fernanda',  apellidos:'Ríos',       genero:'F', distancia:'11K', categoria:'Full Body', acNombres:'Diego', acApellidos:'Ríos' },
-  { id:'ATR-0006', nombres:'Diego',     apellidos:'Zambrano',   genero:'M', distancia:'11K', categoria:'Full Body', acNombres:'Ana',   acApellidos:'Zambrano' },
+  { id:'ATR-0005', nombres:'Fernanda',  apellidos:'Ríos',       genero:'F', distancia:'11K', categoria:'Master/Full Body', acNombres:'Diego', acApellidos:'Ríos' },
+  { id:'ATR-0006', nombres:'Diego',     apellidos:'Zambrano',   genero:'M', distancia:'11K', categoria:'Master/Full Body', acNombres:'Ana',   acApellidos:'Zambrano' },
   { id:'ATR-0007', nombres:'Sofía',     apellidos:'Almeida',    genero:'F', distancia:'6K',  categoria:'Sénior' },
-  { id:'ATR-0008', nombres:'Roberto',   apellidos:'Chica',      genero:'M', distancia:'11K', categoria:'Comandante' },
+  { id:'ATR-0008', nombres:'Roberto',   apellidos:'Chica',      genero:'M', distancia:'11K', categoria:'Comandante/Gran Maestro' },
   { id:'ATR-0009', nombres:'Tomás',     apellidos:'Cevallos',   genero:'M', distancia:'2K',  categoria:'Kids' },
   { id:'ATR-0010', nombres:'Isabella',  apellidos:'Muñoz',      genero:'F', distancia:'2K',  categoria:'Kids' },
-  { id:'ATR-0011', nombres:'Ana',       apellidos:'Cedeño',     genero:'F', distancia:'11K', categoria:'Gran Maestro' },
-  { id:'ATR-0012', nombres:'Martín',    apellidos:'Baque',      genero:'M', distancia:'6K',  categoria:'Máster' },
+  { id:'ATR-0011', nombres:'Ana',       apellidos:'Cedeño',     genero:'F', distancia:'11K', categoria:'Comandante/Gran Maestro' },
+  { id:'ATR-0012', nombres:'Martín',    apellidos:'Baque',      genero:'M', distancia:'6K',  categoria:'Master/Full Body' },
   { id:'ATR-0013', nombres:'Valentina', apellidos:'Loza',       genero:'F', distancia:'6K',  categoria:'Juvenil' },
-  { id:'ATR-0014', nombres:'Emilio',    apellidos:'Vera',       genero:'M', distancia:'11K', categoria:'Comandante' },
+  { id:'ATR-0014', nombres:'Emilio',    apellidos:'Vera',       genero:'M', distancia:'11K', categoria:'Comandante/Gran Maestro' },
   { id:'ATR-0015', nombres:'Sara',      apellidos:'Pin',        genero:'F', distancia:'2K',  categoria:'Kids' },
 ];
 
@@ -771,26 +481,40 @@ const DEMO = [
 ═══════════════════════════════════════════════════ */
 let masterRunning = false, masterInterval = null, masterMs = 0, masterOffset = 0, masterStartTs = null;
 let runners = [];
-
-// Multi-select sets
-let catFilters  = new Set(); // empty = all
-let distFilters = new Set(); // empty = all
+let catFilters  = new Set();
+let distFilters = new Set();
 let podDistFilters = new Set();
 let podCatFilters  = new Set();
-
 let activeTab = 'cronometro';
 
 /* ═══════════════════════════════════════════════════
-   NORMALISE
+   NORMALISE — mapea variantes al nombre canónico
 ═══════════════════════════════════════════════════ */
+const CAT_MAP = {
+  // Master/Full Body (morado)
+  'master/full body':        'Master/Full Body',
+  'master / full body':      'Master/Full Body',
+  'master':                  'Master/Full Body',
+  'máster':                  'Master/Full Body',
+  'full body':               'Master/Full Body',
+  // Comandante/Gran Maestro (verde)
+  'comandante/gran maestro': 'Comandante/Gran Maestro',
+  'comandante / gran maestro':'Comandante/Gran Maestro',
+  'comandante':              'Comandante/Gran Maestro',
+  'gran maestro':            'Comandante/Gran Maestro',
+  // Juvenil (rojo)
+  'juvenil':                 'Juvenil',
+  // Sénior (amarillo)
+  'sénior':                  'Sénior',
+  'senior':                  'Sénior',
+  // Kids
+  'kids':                    'Kids',
+};
+
 function normalizar(r) {
-  const m = {
-    'master':'Máster','máster':'Máster','senior':'Sénior','sénior':'Sénior',
-    'juvenil':'Juvenil','comandante':'Comandante','gran maestro':'Gran Maestro',
-    'kids':'Kids','full body':'Full Body'
-  };
-  r.categoria = m[(r.categoria||'').toLowerCase().trim()] || r.categoria;
-  r.distancia = (r.distancia||'').trim().toUpperCase();
+  const key = (r.categoria || '').toLowerCase().trim();
+  r.categoria = CAT_MAP[key] || r.categoria;
+  r.distancia = (r.distancia || '').trim().toUpperCase();
   return r;
 }
 
@@ -929,7 +653,6 @@ function resetRunner(id) {
 }
 
 function finishAll() {
-  // Stop all individual timers
   runners.forEach(r => {
     if (!r.finished) {
       if (r.running) r.elapsed = Date.now() - r.startTs;
@@ -937,7 +660,6 @@ function finishAll() {
       r.finishMs = r.elapsed; r.finishTime = fmt(r.elapsed);
     }
   });
-  // Stop master clock too
   clearInterval(masterInterval);
   masterRunning = false;
   masterOffset = masterMs;
@@ -945,34 +667,29 @@ function finishAll() {
   document.getElementById('btn-start').style.display = '';
   document.getElementById('btn-start').textContent = 'Reanudar';
   document.getElementById('btn-pause').style.display = 'none';
-
   renderCards(); renderStats(); updateSmallStats();
   if (activeTab === 'clasificacion') renderPodium();
 }
 
 /* ═══════════════════════════════════════════════════
-   FILTERS — multi-select with toggle
+   FILTERS
 ═══════════════════════════════════════════════════ */
 function toggleCatFilter(cat, btn) {
-  if (cat === 'all') {
-    catFilters.clear();
-  } else {
+  if (cat === 'all') catFilters.clear();
+  else {
     if (catFilters.has(cat)) catFilters.delete(cat);
     else catFilters.add(cat);
   }
-  updateCatFilterUI();
-  renderCards();
+  updateCatFilterUI(); renderCards();
 }
 
 function toggleDistFilter(dist, btn) {
-  if (dist === 'all') {
-    distFilters.clear();
-  } else {
+  if (dist === 'all') distFilters.clear();
+  else {
     if (distFilters.has(dist)) distFilters.delete(dist);
     else distFilters.add(dist);
   }
-  updateDistFilterUI();
-  renderCards();
+  updateDistFilterUI(); renderCards();
 }
 
 function updateCatFilterUI() {
@@ -986,7 +703,7 @@ function updateCatFilterUI() {
       btn.style.borderColor = isAll ? '#444' : '';
       btn.style.boxShadow = isAll ? '0 0 0 1px #fff' : '';
     } else {
-      const c = CATS[val] || {bg:'#111',border:'#333',accent:'#888'};
+      const c = getCat(val);
       const active = catFilters.has(val);
       btn.classList.toggle('active', active);
       btn.style.background = active ? c.bg : '';
@@ -1019,15 +736,13 @@ function updateDistFilterUI() {
   });
 }
 
-// Podium filters
 function togglePodDistFilter(dist) {
   if (dist === 'all') podDistFilters.clear();
   else {
     if (podDistFilters.has(dist)) podDistFilters.delete(dist);
     else podDistFilters.add(dist);
   }
-  updatePodDistUI();
-  renderPodium();
+  updatePodDistUI(); renderPodium();
 }
 
 function togglePodCatFilter(cat) {
@@ -1036,8 +751,7 @@ function togglePodCatFilter(cat) {
     if (podCatFilters.has(cat)) podCatFilters.delete(cat);
     else podCatFilters.add(cat);
   }
-  updatePodCatUI();
-  renderPodium();
+  updatePodCatUI(); renderPodium();
 }
 
 function updatePodDistUI() {
@@ -1070,7 +784,7 @@ function updatePodCatUI() {
       btn.style.borderColor = isAll ? '#CC0000' : '';
       btn.style.boxShadow = isAll ? '0 0 0 1px #CC0000' : '';
     } else {
-      const c = CATS[val] || {bg:'#111',border:'#333',accent:'#888'};
+      const c = getCat(val);
       const active = podCatFilters.has(val);
       btn.style.background = active ? c.bg : '';
       btn.style.color = active ? c.accent : '';
@@ -1081,27 +795,24 @@ function updatePodCatUI() {
 }
 
 /* ═══════════════════════════════════════════════════
-   SEARCH + ENTER LOGIC
+   SEARCH CRONOMETRO
 ═══════════════════════════════════════════════════ */
+function nrm(s) {
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
 function getSearchMatches(query) {
   if (!query) return runners;
-  const q = normalize(query);
+  const q = nrm(query);
   return runners.filter(r => {
-    const fullName  = normalize(r.nombres + ' ' + r.apellidos);
-    const idStr     = normalize(r.id);
-    const acFull    = r.acNombres ? normalize(r.acNombres + ' ' + r.acApellidos) : '';
+    const fullName = nrm(r.nombres + ' ' + r.apellidos);
+    const idStr    = nrm(r.id);
+    const acFull   = r.acNombres ? nrm(r.acNombres + ' ' + r.acApellidos) : '';
     return fullName.includes(q) || idStr.includes(q) || acFull.includes(q);
   });
 }
 
-function normalize(s) {
-  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-}
-
-function onSearch() {
-  renderCards();
-  updateSearchHint();
-}
+function onSearch() { renderCards(); updateSearchHint(); }
 
 function updateSearchHint() {
   const q = document.getElementById('search').value.trim();
@@ -1135,6 +846,134 @@ function onSearchKey(e) {
 }
 
 /* ═══════════════════════════════════════════════════
+   BUSCADOR CLASIFICACIÓN
+═══════════════════════════════════════════════════ */
+function onClasiSearch() {
+  const q = document.getElementById('clasi-search').value.trim();
+  document.getElementById('clasi-clear').style.display = q ? '' : 'none';
+  renderClasiSearchResults(q);
+}
+
+function clearClasiSearch() {
+  document.getElementById('clasi-search').value = '';
+  document.getElementById('clasi-clear').style.display = 'none';
+  document.getElementById('clasi-search-results').style.display = 'none';
+  document.getElementById('ranking-section').style.display = '';
+}
+
+function renderClasiSearchResults(query) {
+  const container = document.getElementById('clasi-search-results');
+  const rankingSec = document.getElementById('ranking-section');
+
+  if (!query) {
+    container.style.display = 'none';
+    rankingSec.style.display = '';
+    return;
+  }
+
+  // Buscar entre TODOS los corredores (no solo finalizados)
+  const q = nrm(query);
+  const matches = runners.filter(r => {
+    const fullName = nrm(r.nombres + ' ' + r.apellidos);
+    const idStr    = nrm(r.id);
+    const acFull   = r.acNombres ? nrm(r.acNombres + ' ' + r.acApellidos) : '';
+    return fullName.includes(q) || idStr.includes(q) || acFull.includes(q);
+  });
+
+  // Para los finalizados: calcular posición general y por categoría
+  const allFinished = [...runners.filter(r => r.finished)].sort((a,b) => a.finishMs - b.finishMs);
+
+  const getGenPos = (r) => allFinished.findIndex(x => x.id === r.id) + 1;
+  const getCatPos = (r) => {
+    const catGroup = allFinished.filter(x => x.categoria === r.categoria && x.distancia === r.distancia);
+    return catGroup.findIndex(x => x.id === r.id) + 1;
+  };
+
+  if (!matches.length) {
+    container.innerHTML = `<div class="clasi-search-results">
+      <div class="clasi-no-results">Sin resultados para "${query}"</div>
+    </div>`;
+    container.style.display = '';
+    rankingSec.style.display = 'none';
+    return;
+  }
+
+  // Ordenar: finalizados primero por tiempo, luego pendientes
+  const sorted = [...matches].sort((a,b) => {
+    if (a.finished && b.finished) return a.finishMs - b.finishMs;
+    if (a.finished) return -1;
+    if (b.finished) return 1;
+    return 0;
+  });
+
+  const rows = sorted.map(r => {
+    const cat  = getCat(r.categoria);
+    const dist = DISTS[r.distancia] || {color:'#888', text:'#aaa', border:'#333'};
+    const isFullBody = r.categoria === 'Master/Full Body' && r.acNombres;
+    const partner = isFullBody ? `<div class="clasi-result-partner">+ ${r.acNombres} ${r.acApellidos}</div>` : '';
+
+    if (r.finished) {
+      const genPos = getGenPos(r);
+      const catPos = getCatPos(r);
+      const pCls   = genPos===1?'pos-1':genPos===2?'pos-2':genPos===3?'pos-3':'pos-rest';
+      const medal  = genPos===1?'🥇':genPos===2?'🥈':genPos===3?'🥉':'';
+      const timeCls= genPos===1?'best':genPos<=3?'top3':'';
+
+      return `<div class="clasi-result-row">
+        <div>
+          <div class="clasi-result-pos ${pCls}">${genPos}${medal}</div>
+        </div>
+        <div>
+          <div class="clasi-result-name">${r.nombres} ${r.apellidos}</div>
+          ${partner}
+          <div class="clasi-result-id">${r.id}</div>
+        </div>
+        <div>
+          <div class="clasi-result-cat" style="color:${cat.accent}">${r.categoria}</div>
+          <span class="clasi-result-dist" style="border-color:${dist.border};color:${dist.text};background:rgba(0,0,0,0.4)">${r.distancia}</span>
+        </div>
+        <div>
+          <div class="clasi-result-pos-cat" style="color:${cat.accent}">
+            Pos. cat: <strong>#${catPos}</strong>
+          </div>
+          <div style="font-size:11px;color:#333;margin-top:2px">${r.genero==='F'||r.genero==='Femenino'?'Femenino':'Masculino'}</div>
+        </div>
+        <div>
+          <div class="clasi-result-time pod-time ${timeCls}">${r.finishTime}</div>
+          <div style="font-size:10px;color:#2ecc71;letter-spacing:1px;margin-top:2px">✓ Finalizado</div>
+        </div>
+      </div>`;
+    } else {
+      // No finalizado
+      return `<div class="clasi-result-row" style="opacity:0.55">
+        <div><div class="clasi-result-pos" style="color:#333;font-family:'Bebas Neue',sans-serif;font-size:28px">—</div></div>
+        <div>
+          <div class="clasi-result-name">${r.nombres} ${r.apellidos}</div>
+          ${partner}
+          <div class="clasi-result-id">${r.id}</div>
+        </div>
+        <div>
+          <div class="clasi-result-cat" style="color:${cat.accent}">${r.categoria}</div>
+          <span class="clasi-result-dist" style="border-color:${dist.border};color:${dist.text};background:rgba(0,0,0,0.4)">${r.distancia}</span>
+        </div>
+        <div><div class="clasi-result-pos-cat" style="color:#444">Sin clasificar</div></div>
+        <div><div class="clasi-result-time" style="color:#333">${r.running?'En carrera':'Pendiente'}</div></div>
+      </div>`;
+    }
+  }).join('');
+
+  container.innerHTML = `<div class="clasi-search-results">
+    <div class="clasi-search-results-header">
+      <div class="clasi-search-results-title">Resultado de búsqueda</div>
+      <div class="clasi-search-results-count">${matches.length} corredor${matches.length!==1?'es':''} encontrado${matches.length!==1?'s':''}</div>
+    </div>
+    ${rows}
+  </div>`;
+  container.style.display = '';
+  rankingSec.style.display = 'none';
+}
+
+/* ═══════════════════════════════════════════════════
    RENDER FILTERS
 ═══════════════════════════════════════════════════ */
 function renderFilters() {
@@ -1142,25 +981,33 @@ function renderFilters() {
   const dists = [...new Set(runners.map(r => r.distancia))].sort((a,b) => parseInt(a)-parseInt(b));
 
   const cf = document.getElementById('cat-filters');
-  cf.innerHTML = `<button class="filter-btn active" data-val="all" style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff" onclick="toggleCatFilter('all',this)">Todas (${runners.length})</button>`;
+  cf.innerHTML = `<button class="filter-btn active" data-val="all"
+    style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff"
+    onclick="toggleCatFilter('all',this)">Todas (${runners.length})</button>`;
+
   cats.forEach(cat => {
-    const c = CATS[cat] || {bg:'#111',border:'#333',accent:'#888'};
+    const c = getCat(cat);
     const cnt = runners.filter(r => r.categoria === cat).length;
-    cf.innerHTML += `<button class="filter-btn" data-val="${cat}" onclick="toggleCatFilter('${cat}',this)" style="border-color:${c.border};color:${c.accent}">
+    cf.innerHTML += `<button class="filter-btn" data-val="${cat}"
+      onclick="toggleCatFilter('${cat}',this)"
+      style="border-color:${c.border};color:${c.accent}">
       <span class="dot" style="background:${c.border}"></span>${cat} (${cnt})</button>`;
   });
 
   const df = document.getElementById('dist-filters');
-  df.innerHTML = `<button class="filter-btn active" data-val="all" style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff" onclick="toggleDistFilter('all',this)">Todas</button>`;
+  df.innerHTML = `<button class="filter-btn active" data-val="all"
+    style="background:#1A1A1A;color:#fff;border-color:#444;box-shadow:0 0 0 1px #fff"
+    onclick="toggleDistFilter('all',this)">Todas</button>`;
   dists.forEach(d => {
     const c = DISTS[d] || {color:'#888',text:'#aaa',border:'#333'};
     const cnt = runners.filter(r => r.distancia === d).length;
-    df.innerHTML += `<button class="filter-btn" data-val="${d}" onclick="toggleDistFilter('${d}',this)" style="border-color:${c.color};color:${c.text}">
+    df.innerHTML += `<button class="filter-btn" data-val="${d}"
+      onclick="toggleDistFilter('${d}',this)"
+      style="border-color:${c.color};color:${c.text}">
       <span class="dot" style="background:${c.color}"></span>${d} (${cnt})</button>`;
   });
 
-  updateCatFilterUI();
-  updateDistFilterUI();
+  updateCatFilterUI(); updateDistFilterUI();
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1197,16 +1044,10 @@ function renderCards() {
   const search = document.getElementById('search').value.trim();
   let list = runners;
 
-  // Search filter
   if (search) list = getSearchMatches(search);
-
-  // Category multi-filter
   if (catFilters.size > 0) list = list.filter(r => catFilters.has(r.categoria));
-
-  // Distance multi-filter
   if (distFilters.size > 0) list = list.filter(r => distFilters.has(r.distancia));
 
-  // Sort: running first, then pending, then finished
   list = [...list].sort((a,b) => {
     if (a.finished !== b.finished) return a.finished ? 1 : -1;
     if (a.running !== b.running)   return a.running  ? -1 : 1;
@@ -1222,11 +1063,11 @@ function renderCards() {
     const isRunning = r.running && !r.finished;
     const cat  = r.finished
       ? {bg:'#0A1A0A', border:'#2ecc71', accent:'#2ecc71'}
-      : (CATS[r.categoria] || {bg:'#111', border:'#333', accent:'#888'});
+      : getCat(r.categoria);
     const dist = DISTS[r.distancia] || {color:'#888', text:'#aaa', border:'#333'};
     const cardBorder = r.finished ? '#1a4a1a' : (isRunning ? cat.border : '#1E1E1E');
     const dot = isRunning ? `<span class="running-dot"></span>` : '';
-    const isFullBody = r.categoria === 'Full Body';
+    const isFullBody = r.categoria === 'Master/Full Body';
 
     const partnerHtml = isFullBody && r.acNombres
       ? `<div class="runner-name-partner">${r.acNombres} ${r.acApellidos}</div>`
@@ -1267,27 +1108,37 @@ function renderPodiumFilters() {
   const allCats  = [...new Set(finished.map(r => r.categoria))].sort();
 
   const pdf = document.getElementById('pod-dist-filters');
-  pdf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodDistFilter('all')" style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las distancias</button>`;
+  pdf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodDistFilter('all')"
+    style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las distancias</button>`;
   allDists.forEach(d => {
     const c = DISTS[d] || {color:'#888',text:'#aaa'};
-    pdf.innerHTML += `<button class="filter-btn" data-val="${d}" onclick="togglePodDistFilter('${d}')" style="border-color:${c.color};color:${c.text}">
+    pdf.innerHTML += `<button class="filter-btn" data-val="${d}" onclick="togglePodDistFilter('${d}')"
+      style="border-color:${c.color};color:${c.text}">
       <span class="dot" style="background:${c.color}"></span>${d}</button>`;
   });
 
   const pcf = document.getElementById('pod-cat-filters');
-  pcf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodCatFilter('all')" style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las categorías</button>`;
+  pcf.innerHTML = `<button class="filter-btn" data-val="all" onclick="togglePodCatFilter('all')"
+    style="background:#CC0000;color:#fff;border-color:#CC0000;box-shadow:0 0 0 1px #CC0000">Todas las categorías</button>`;
   allCats.forEach(cat => {
-    const c = CATS[cat] || {bg:'#111',border:'#333',accent:'#888'};
-    pcf.innerHTML += `<button class="filter-btn" data-val="${cat}" onclick="togglePodCatFilter('${cat}')" style="border-color:${c.border};color:${c.accent}">
+    const c = getCat(cat);
+    pcf.innerHTML += `<button class="filter-btn" data-val="${cat}" onclick="togglePodCatFilter('${cat}')"
+      style="border-color:${c.border};color:${c.accent}">
       <span class="dot" style="background:${c.border}"></span>${cat}</button>`;
   });
 
-  updatePodDistUI();
-  updatePodCatUI();
+  updatePodDistUI(); updatePodCatUI();
 }
 
 function renderPodium() {
   renderPodiumFilters();
+
+  // Si hay búsqueda activa, no renderizar el ranking (está oculto)
+  const clasiQ = document.getElementById('clasi-search').value.trim();
+  if (clasiQ) {
+    renderClasiSearchResults(clasiQ);
+    return;
+  }
 
   let finished = runners.filter(r => r.finished);
   if (podDistFilters.size > 0) finished = finished.filter(r => podDistFilters.has(r.distancia));
@@ -1305,8 +1156,8 @@ function renderPodium() {
     const pos   = i + 1;
     const pCls  = pos===1?'pos-1':pos===2?'pos-2':pos===3?'pos-3':'pos-rest';
     const dist  = DISTS[r.distancia]||{color:'#888',text:'#aaa',border:'#333'};
-    const cat   = CATS[r.categoria]||{border:'#333',accent:'#888'};
-    const isFullBody = r.categoria === 'Full Body' && r.acNombres;
+    const cat   = getCat(r.categoria);
+    const isFullBody = r.categoria === 'Master/Full Body' && r.acNombres;
     const partner = isFullBody ? `<div class="pod-name-partner">${r.acNombres} ${r.acApellidos}</div>` : '';
     const medal = pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
     return `<tr>
@@ -1350,7 +1201,6 @@ function renderPodium() {
 
   // ── POR DISTANCIA Y CATEGORÍA ─────────────────────────
   const dists = [...new Set(finished.map(r => r.distancia))].sort((a,b) => parseInt(a)-parseInt(b));
-
   dists.forEach(dist => {
     const distRunners = finished.filter(r => r.distancia === dist);
     const distC = DISTS[dist] || {color:'#888',text:'#aaa'};
@@ -1365,12 +1215,12 @@ function renderPodium() {
     cats.forEach(cat => {
       const group = distRunners.filter(r => r.categoria === cat);
       if (!group.length) return;
-      const catC = CATS[cat] || {border:'#333',accent:'#888',bg:'#111'};
+      const catC = getCat(cat);
       const rows = group.map((r, i) => {
         const pos   = i + 1;
         const pCls  = pos===1?'pos-1':pos===2?'pos-2':pos===3?'pos-3':'pos-rest';
         const medal = pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
-        const isFullBody = r.categoria === 'Full Body' && r.acNombres;
+        const isFullBody = r.categoria === 'Master/Full Body' && r.acNombres;
         const partner = isFullBody ? `<div class="pod-name-partner">${r.acNombres} ${r.acApellidos}</div>` : '';
         return `<tr>
           <td class="pos-cell">
